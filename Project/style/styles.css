@@ -12,8 +12,9 @@ body, html {
 /* 왼쪽 사이드바 */ 
  
 .sidebar {
+    
     width: 190px; /* 사이드바 너비를 270px로 조정 */
-    position: fixed;
+    height: 500px;
     top: 100px;
     bottom: 600px;
     overflow-y: auto;
@@ -34,6 +35,7 @@ body, html {
     color: #fff; /* 텍스트 색상 지정 */
     text-decoration: none; /* 밑줄 제거 */
     text-align: center; /* 텍스트 가운데 정렬 */
+    
 }
 
 .sidebar a:hover {

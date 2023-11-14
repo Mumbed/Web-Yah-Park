@@ -282,3 +282,231 @@ a {
     border: 0;
     resize: vertical;
 }
+/* Header and Navigation Styles */
+header{
+    width: 100%;
+}
+.nav-container {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    position: relative;
+}
+
+.nav-inner {
+    width: 95%; /* 변경 */
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.department-name, .menu-item, .account-action {
+    color: #36384E;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.department-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-right: 20px; /* 간격 추가 */
+}
+
+.menu-container {
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+}
+
+.menu-item {
+    font-size: 16px;
+    margin-right: 20px; /* 간격 추가 */
+}
+
+.account-container {
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+}
+
+.account-action {
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 20px; /* 간격 추가 */
+}
+
+.signup-button {
+    width: 117px;
+    height: 42px;
+    position: relative;
+    background: #2F65DD;
+}
+
+.signup-text {
+    left: 27.75px;
+    top: 11px;
+    position: absolute;
+    color: #F5F5F5;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Search Form Styles */
+form[name="searchForm"] {
+    background-color: #f3f3f3;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto; /* 가운데 정렬을 위해 margin을 auto로 설정 */
+    width: 90%; /* 원하는 너비 조절 */
+    display: flex; /* Flexbox 사용 */
+    flex-direction: column; /* 항목을 세로로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+}
+
+
+.hidden {
+    display: none;
+}
+
+.board-cate ul {
+    padding: 0;
+    list-style: none;
+}
+
+.board-cate li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.board-cate li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.board-cate li.active a {
+    color: #4CAF50;
+}
+
+.board-search {
+    margin-top: 20px;
+}
+
+.util-search {
+    margin-bottom: 10px;
+}
+
+.util-search .new_win {
+    text-decoration: none;
+    color: #000;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.form-search fieldset {
+    border: none;
+}
+
+.tbl-search {
+    display: flex;
+    align-items: center;
+}
+
+.box-sel {
+    margin-right: 10px;
+}
+
+.box-search input[type="text"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+}
+
+.box-search input[type="submit"] {
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+/* footer */
+footer {
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  /* .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+  } */
+  
+  .footer-logo img {
+    width: 50px; /* Adjust as necessary */
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  
+  .footer-links a {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-info p {
+    margin: 5px 0;
+  }
+  
+  .footer-copy {
+    margin-top: 5px; /* Add space above the copyright text */
+    width: 100%;
+  }
+  
+  .footer-top {
+    padding-top: 10px;
+  }
+  
+  .footer-top a {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .footer-top a:hover {
+    background-color: #555;
+  }
+  

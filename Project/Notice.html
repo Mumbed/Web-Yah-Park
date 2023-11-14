@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Search Form</title>
     <link rel="stylesheet" type="text/css" href="style/styles.css">
+    <link rel="stylesheet" type="text/css" href="style/q&a.css">
 </head>
 <body>
     <header>
@@ -15,6 +16,7 @@
                     <a href="/list/학부소개.html" class="menu-item">학부소개</a>
                     <a href="/list/커뮤니티.html" class="menu-item">커뮤니티</a>
                     <a href="/list/교수진.html" class="menu-item">교수진</a>
+                    <a href="q&a.html" class="menu-item">Q&A</a>
                 </div>
                 <div class="account-container">
                     <a href="/login.html" class="account-action">LOGIN</a>
@@ -25,16 +27,75 @@
             </div>
         </nav>
     </header>
-    <div class="sidebar">
-        <ul>
-            <li><a href="#">학생회 공지사항</a></li>
-            <li><a href="#">동아리</a></li>
-            <li><a href="#">소모임</a></li>
-            <!-- More categories -->
-        </ul>
+ 
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>공지사항</strong>
+            <p>컴퓨터공학부의 새로운 공지사항을 빠르게 받아보세요!</p>
+        </div>
+        <div class="board_list_wrap">
+            <div class="board_list">
+                <div class="top">
+                    <div class="num">번호</div>
+                    <div class="title">제목</div>
+                    <div class="writer">글쓴이</div>
+                    <div class="date">작성일</div>
+                    <div class="count">조회</div>
+                </div>
+                <div>
+                    <div class="num">5</div>
+                    <div class="title"><a href="NoticeItem.html">글 제목이 들어갑니다.</a></div>
+                    <div class="writer">김이름</div>
+                    <div class="date">2021.1.15</div>
+                    <div class="count">33</div>
+                </div>
+                <div>
+                    <div class="num">4</div>
+                    <div class="title"><a href="NoticeItem.html">글 제목이 들어갑니다.</a></div>
+                    <div class="writer">김이름</div>
+                    <div class="date">2021.1.15</div>
+                    <div class="count">33</div>
+                </div>
+                <div>
+                    <div class="num">3</div>
+                    <div class="title"><a href="NoticeItem.html">글 제목이 들어갑니다.</a></div>
+                    <div class="writer">김이름</div>
+                    <div class="date">2021.1.15</div>
+                    <div class="count">33</div>
+                </div>
+                <div>
+                    <div class="num">2</div>
+                    <div class="title"><a href="NoticeItem.html">글 제목이 들어갑니다.</a></div>
+                    <div class="writer">김이름</div>
+                    <div class="date">2021.1.15</div>
+                    <div class="count">33</div>
+                </div>
+                <div>
+                    <div class="num">1</div>
+                    <div class="title"><a href="NoticeItem.html">글 제목이 들어갑니다.</a></div>
+                    <div class="writer">김이름</div>
+                    <div class="date">2021.1.15</div>
+                    <div class="count">33</div>
+                </div>
+            </div>
+            <div class="board_page">
+                <a href="#" class="bt first"><<</a>
+                <a href="#" class="bt prev"><</a>
+                <a href="#" class="num on">1</a>
+                <a href="#" class="num">2</a>
+                <a href="#" class="num">3</a>
+                <a href="#" class="num">4</a>
+                <a href="#" class="num">5</a>
+                <a href="#" class="bt next">></a>
+                <a href="#" class="bt last">>></a>
+            </div>
+         
+        
+        </div>
     </div>
 
-    <div class="main-content">
+
+    <!-- <div class="main-content">
         <table>
             <thead>
                 <tr>
@@ -46,9 +107,9 @@
                     <th>조회수</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody> -->
                 <!-- Repeat this row for each entry in your list -->
-                <tr>
+                <!-- <tr>
                     <td>1</td>
                     <td>안내</td>
                     <td>컴퓨터공학부 잠바 수령 안내</td>
@@ -95,9 +156,9 @@
                     <td>학생회장</td>
                     <td>11/13</td>
                     <td>83</td>
-                </tr>
+                </tr> -->
                 <!-- ... more rows ... -->
-            </tbody>
+            <!-- </tbody>
         </table>
 
         <div class="pagination">
@@ -107,7 +168,7 @@
             <button>3</button>
             <button>»</button>
         </div>
-    </div>
+    </div> -->
 
     <!-- Search Form Section -->
     <section class="search-form-container">
