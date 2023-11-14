@@ -58,7 +58,7 @@ a {
     background: #000;
     color: #fff;
 }
-
+/*
 .board_list {
     width: 100%;
     border-top: 2px solid #000;
@@ -213,7 +213,7 @@ a {
     border-bottom: 1px solid #000;
     line-height: 160%;
     font-size: 1.4rem;
-}
+}*/
 
 .board_write {
     border-top: 2px solid #000;
@@ -360,87 +360,6 @@ a {
     color: inherit;
 }
 
-/* Search Form Styles */
-form[name="searchForm"] {
-    background-color: #f3f3f3;
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px auto; /* 가운데 정렬을 위해 margin을 auto로 설정 */
-    width: 90%; /* 원하는 너비 조절 */
-    display: flex; /* Flexbox 사용 */
-    flex-direction: column; /* 항목을 세로로 정렬 */
-    align-items: center; /* 가운데 정렬 */
-}
-
-
-.hidden {
-    display: none;
-}
-
-.board-cate ul {
-    padding: 0;
-    list-style: none;
-}
-
-.board-cate li {
-    display: inline;
-    margin-right: 10px;
-}
-
-.board-cate li a {
-    text-decoration: none;
-    color: #000;
-}
-
-.board-cate li.active a {
-    color: #4CAF50;
-}
-
-.board-search {
-    margin-top: 20px;
-}
-
-.util-search {
-    margin-bottom: 10px;
-}
-
-.util-search .new_win {
-    text-decoration: none;
-    color: #000;
-    background-color: #f0f0f0;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-right: 5px;
-}
-
-.form-search fieldset {
-    border: none;
-}
-
-.tbl-search {
-    display: flex;
-    align-items: center;
-}
-
-.box-sel {
-    margin-right: 10px;
-}
-
-.box-search input[type="text"] {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-right: 5px;
-}
-
-.box-search input[type="submit"] {
-    padding: 5px 15px;
-    border-radius: 5px;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-}
 
 
 
