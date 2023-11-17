@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Form</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <style>
+        header {
+  width: 100%;
+  background-color: #f5f5f5; /* 헤더 배경색 설정 */
+  /* 추가적인 헤더 스타일링 */
+}
+
+.b-example-divider {
+        width: 100%;
+        height: 0.5rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+
+.body{
+    color: var(--bs-body-color);
+}
+.nav-container {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  position: relative;
+}
+
+.nav-inner {
+  width: 95%; /* 변경 */
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.department-name, .menu-item, .account-action {
+  color: #36384E;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: 20px;
+  word-wrap: break-word;
+}
+
+.department-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: 20px; /* 간격 추가 */
+}
+
+.menu-container {
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.menu-item {
+  font-size: 16px;
+  margin-right: 20px; /* 간격 추가 */
+}
+
+.account-container {
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.account-action {
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 20px; /* 간격 추가 */
+}
+
+.signup-button {
+  width: 117px;
+  height: 42px;
+  position: relative;
+  background: #2F65DD;
+}
+
+.signup-text {
+  left: 27.75px;
+  top: 11px;
+  position: absolute;
+  color: #F5F5F5;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;   
+}
+
+/* Navbar links on hover */
+.navbar-nav .nav-item .nav-link:hover {
+  color: #2F65DD; /* 마우스 오버 시 텍스트 색상 변경 */
+  font-weight: bold; /* 마우스 오버 시 폰트 굵게 */
+  /* 다른 스타일 변경 가능 */
+}
+
+/* Signup button on hover */
+.signup-button:hover {
+  background-color: #2F65DD; /* 마우스 오버 시 배경색 변경 */
+  /* 다른 스타일 변경 가능 */
+}
+
+/* Breadcrumb Navigation Styles */
+.breadcrumb-nav {
+  font-size: 16px;
+  padding: 8px 20px;
+  background-color: #f5f5f5;
+  color: #333;
+  border-bottom: 1px solid #e1e1e1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.breadcrumb-nav a {
+  color: #0275d8;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.breadcrumb-nav a:hover {
+  text-decoration: underline;
+}
+
+/* 왼쪽 사이드바 */ 
+.sidebar {
+  flex: 0 0 190px;
+  width: 190px;
+  position: sticky;
+  top: 100px;
+  bottom: 70px;
+  overflow-y: auto;
+  padding: 0;
+  background-color: #7a9ade;
+}
+.sidebar ul {
+  list-style: none; /* 리스트 마커 없애기 */
+  padding: 0; /* 내부 여백 제거 */
+  
+}
+
+.sidebar a {
+  display: block; /* 링크를 블록 레벨 요소로 만들어 버튼처럼 보이게 함 */
+  padding: 10px; /* 버튼 패딩 조절 */
+  background-color: #7a9ade; /* 배경색 지정 */
+  color: #fff; /* 텍스트 색상 지정 */
+  text-decoration: none; /* 밑줄 제거 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.sidebar a:hover {
+  background-color: #1A45A3; /* 마우스 호버 시 배경색 변경 */
+}
+
+.main-content {
+  flex-grow: 1; /* 남은 공간 모두 채우기 */
+  margin-left: 10px; /* 사이드바 너비 만큼 여백 추가 */
+  padding: 20px; /* Padding to prevent content from touching the edges */
+  background-color: #fff; /* 메인 컨텐츠 배경색 설정 */
+  overflow-y: auto; /* Allow scrolling of the main content */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.notice-type {
+  color: red;
+}
+
+.pagination {
+  text-align: center;
+  padding: 10px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+}
+/* 메인 컨텐츠 스타일 */
+.main-content {
+  display: flex;
+  flex-direction: column; /* 가로 방향에서 세로 방향으로 변경 */
+  align-items: center; /* 가운데 정렬 */
+  padding: 20px;
+  width: calc(100% - 200px); /* 사이드바 너비를 제외한 전체 너비 */
+  margin-left: 200px; /* 사이드바와 메인 컨텐츠 사이의 여백 */
+}
+
+
+
+
+
+
+
+
+/* 동아리 컴포넌트 컨테이너 스타일 */
+.component-container {
+  flex-basis: calc(25% - 40px);
+  max-width: calc(25% - 40px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/* 동아리 이미지 및 설명 스타일 */
+.dongimg,
+.description {
+  width: 100%;
+}
+
+.logo-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.description {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+
+/* footer */
+footer {
+  background-color: #f5f5f5;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+  background-color: #f5f5f5; /* 푸터 배경색 설정 */
+  /* 추가적인 푸터 스타일링 */
+}
+
+
+.footer-logo img {
+  width: 50px; /* Adjust as necessary */
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-info p {
+  margin: 5px 0;
+}
+
+.footer-copy {
+  margin-top: 5px; /* Add space above the copyright text */
+  width: 100%;
+}
+
+.footer-top {
+  padding-top: 10px;
+}
+
+.footer-top a {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.footer-top a:hover {
+
+  background-color: #555;
+}
+
+
+.b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-inner">
+                <div class="department-name">한성대학교 컴퓨터공학부</div>
+                <div class="menu-container">
+                    <a href="/list/공지사항.html" class="menu-item">공지사항</a>
+                    <a href="/list/학부소개.html" class="menu-item">학부소개</a>
+                   
+                    
+                    <a href="/list/커뮤니티.html" class="menu-item">커뮤니티</a>
+                    <a href="/list/교수진.html" class="menu-item">교수진</a>
+                </div>
+                <div class="account-container">
+                    <a href="/login.html" class="account-action">LOGIN</a>
+                    <a href="/signup.html" class="signup-button">
+                        <div class="signup-text">SIGN UP</div>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="#">모바일 소프트웨어</a></li>
+            <li><a href="#">웹 공학</a></li>
+            <li><a href="#">빅데이터</a></li>
+            <li><a href="#">디지털 콘텐츠 및 가상현실</a></li>
+            <!-- More categories -->
+        </ul>
+    </div>
+
+    <main class="container">
+        <div class="bg-body-tertiary p-5 rounded">
+          <h1>학부장 인사말</h1>
+          <p class="lead">한성대학교 컴퓨터 공학부는 기존의 컴퓨터공학과와 멀티미디어 공학과를 합병하여 2016년 1학기부터 새로이 출범하였습니다. 창의적인 문제 해결 능력을 갖춘 글로벌 SW 인재 양성을 목표로 4개의 트랙별 교과 과정을 운영하고 있으며, 산업체와의 유기적인 연계를 통해 실무 교육을 진행하고 있습니다. 본교의 최대 학부로서 19명의 전임 교원이 학부 교육을 담당하고 있으며 학생들은 SW 경진 대회, 국내외 인턴쉽 참가, 학술 소모임 등 활발이 활동하고 있습니다. 앞으로도 교육, 산학, 연구를 축으로 IT 분야를 선도하는 학부가 되도록 노력하겠습니다. 감사합니다.</p>
+          <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">View navbar docs &raquo;</a>
+        </div>
+      </main>
+      <div class="b-example-divider"></div>
+
+      <main class="container">
+        <div class="bg-body-tertiary p-5 rounded">
+          <h1>교육 목표</h1>
+          <p class="lead">한성대학교 컴퓨터공학부는 소프트웨어 기술과 정보통신 기술(ICT)에 대한 심화 교육을 통해 창의적인 소프트웨어 엔지니어를 양성하고 있습니다. 구체적으로 문제 해결 능력과 시스템 구축 능력을 갖추고 최신 ICT 기술 트랜드를 활용할 수 있는 인재를 양성하고 있습니다. 이를 위해서 컴퓨터공학의 전반적인 이론과 프로그래밍 교육을 수행한 후, 산업체와의 협업을 통한 실무 프로젝트 기반 교육을 진행합니다. 소프트웨어와 컴퓨터 관련 기술은 사회 전반에 걸쳐 필수적인 기초 기술로 자리 잡고 있습니다. 따라서 한성대학교 컴퓨터 공학부 졸업생은 소프트웨어 및 컴퓨터 시스템을 다루는 모든 산업 분야에 취업해 활약하고 있습니다.</p>
+          <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">View navbar docs &raquo;</a>
+        </div>
+      </main>
+      <div class="b-example-divider"></div>
+
+      <main class="container">
+        <div class="bg-body-tertiary p-5 rounded">
+          <h1>졸업생 사례</h1>
+          <p class="lead">1.공개 SW 개발자 대회 미래창조과학부 장관상(2014년): 누구나 손쉽게 모바일용 소프트 키보드를 구현할 수 있게 해주는 S/W 개발, 졸업이후 각각 삼성전자와 NHN에 입사
+            2. CEO 캠퍼스 대회 최우수상: 동대문 의류 유통 클러스터를 활용한 의류 판매를 지원하는 B2C 앱 개발
+            3. ‘기능성 게임에 적합한 감정을 가진 다중 그룹 군중 시뮬레이션 연구’ 프로젝트에 연구원으로 참여. 기능성 게임 분야의 중요기술이며 인력 수요가 높은 군중 시뮬레이션 분야를 시스템으로 구현하는 역할을 수행. 국내 게임회사인 Nexon에 입사
+            4. ICT 관련 기업 136 개와 MOU를 체결하고 기업에 학생이 4~6 개월 동안 파견되어 현장 실무 중심의 교육 및 실습 과정 진행. 2015년 파견된 38명의 학생 (당시 4학년) 중에 35%에 해당하는 13명은 실습을 진행했던 해당 기업에 졸업과 함께 곧바로 취업</p>
+          <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">View navbar docs &raquo;</a>
+        </div>
+      </main>
+      <div class="b-example-divider"></div>
+
+      <main class="container">
+        <div class="bg-body-tertiary p-5 rounded">
+          <h1>CONTACT</h1>
+          <p class="lead"><li>위치: 한성대학교 공학관 A동 104호</li>
+            <li>대중 교통: 한성대입구역(4호선) 2번 출구 마을버스 2번 승차, 창신역(6호선) 3번 출구 마을버스 3번 승차</li>
+            <li>주소: 02876 서울시 성북구 삼선교로 16길 116 한성대학교</li>
+            <li>전화: 02-760-4137, 02-760-4438</li>
+            <li>팩스: 02-760-4488</li></p>
+          <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">View navbar docs &raquo;</a>
+        </div>
+      </main>
+
+
+    
+
+      
+
+   
+    
+    <footer>
+        <div class="footer-container">
+          <!-- <div class="footer-logo">
+            <img src="hansung.png" alt="Logo">
+          </div> -->
+          <div class="footer-links">
+            <a href="#">|  게시판보기  | </a>
+            <a href="#">교수소개 사이트    | </a>
+            <a href="#">한성대학교 커리큘럼  |</a>
+          </div>
+          <div class="footer-info">
+            <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
+            <p>대표 02-760-4114 입학 02-760-5800</p>
+          </div>
+          <div class="footer-copy">
+            <p>COPYRIGHT(c) HANSUNGUNIVERSITY. ALL RIGHTS RESERVED.</p>
+            
+          </div>
+        </div>
+        
+      </footer>
+      
+</body>
+</html>
