@@ -1,9 +1,9 @@
 import React from 'react';
-import './Qna.css'; // CSS 파일을 import 합니다.
+import './style/Student_Notice.css'; // CSS 파일을 import 합니다.
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
 
-function Qna() {
+function Student_Notice() {
   return (
     <div>
       <header>
@@ -41,13 +41,19 @@ function Qna() {
           </div>
         </nav>
       </header>
-
       <div className="board">
-       
+        <div className="sidebar">
+          <ul>
+          <li><Link className="nav-link" to="/Student_notice">학생회 공지사항</Link></li>
+            <li><Link className="nav-link" to="/Community">소모임</Link></li>
+            <li><Link className="nav-link" to="/Somoim">소모임</Link></li>
+            {/* More categories */}
+          </ul>
+        </div>
         <div class="board_wrap">
         <div class="board_title">
-            <strong>Q&A 게시판</strong>
-            <p>컴퓨터 공학부, 코드 등 다양한 분야에 대해 질문해주세요!</p>
+            <strong>공지사항</strong>
+            <p>한성대학교 컴퓨터 공학부에서 중요한 정보들을 공지해드립니다.</p>
         </div>
         <div class="board_list_wrap">
             <div class="board_list">
@@ -60,35 +66,35 @@ function Qna() {
                 </div>
                 <div>
                     <div class="num">5</div>
-                    <div class="title"><Link className="nav-link" to="/Content">글 제목이 들어갑니다.</Link></div>
+                    <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
                     <div class="writer">김이름</div>
                     <div class="date">2021.1.15</div>
                     <div class="count">33</div>
                 </div>
                 <div>
                     <div class="num">4</div>
-                    <div class="title"><Link className="nav-link" to="/Content">글 제목이 들어갑니다.</Link></div>
+                    <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
                     <div class="writer">김이름</div>
                     <div class="date">2021.1.15</div>
                     <div class="count">33</div>
                 </div>
                 <div>
                     <div class="num">3</div>
-                    <div class="title"><Link className="nav-link" to="/Content">글 제목이 들어갑니다.</Link></div>
+                    <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
                     <div class="writer">김이름</div>
                     <div class="date">2021.1.15</div>
                     <div class="count">33</div>
                 </div>
                 <div>
                     <div class="num">2</div>
-                    <div class="title"><Link className="nav-link" to="/Content">글 제목이 들어갑니다.</Link></div>
+                    <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
                     <div class="writer">김이름</div>
                     <div class="date">2021.1.15</div>
                     <div class="count">33</div>
                 </div>
                 <div>
                     <div class="num">1</div>
-                    <div class="title"><Link className="nav-link" to="/Content">글 제목이 들어갑니다.</Link></div>
+                    <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
                     <div class="writer">김이름</div>
                     <div class="date">2021.1.15</div>
                     <div class="count">33</div>
@@ -132,4 +138,4 @@ function Qna() {
   );
 }
 
-export default Qna;
+export default Student_Notice;

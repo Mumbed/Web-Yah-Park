@@ -1,14 +1,13 @@
 import React from 'react';
-import './Community.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
+import './style/somoim.css'; // 커스텀 스타일 시트를 import 합니다.
+import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS를 import 합니다.
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'; // Routes 추가
 
-
-
-function Community() {
+function Somoim() {
   return (
     <div>
-      <header>
+  
+  <header>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container">
           <Link className="nav-link" to="/Main">한성대학교 컴퓨터공학부</Link>
@@ -43,22 +42,24 @@ function Community() {
           </div>
         </nav>
       </header>
-
+      
       <div className="board">
         <div className="sidebar">
           <ul>
-            <li><Link className="nav-link" to="/Student_notice">학생회 공지사항</Link></li>
-            <li><Link className="nav-link" to="/Community">소모임</Link></li>
+            <li><a href="hewgong.html">학생회 공지사항</a></li>
+            <li><a href="test.html">동아리</a></li>
             <li><Link className="nav-link" to="/Somoim">소모임</Link></li>
+            {/* More categories */}
           </ul>
         </div>
+        
         <div className="main-content">
           <div className="component-container">
             <div className="dongimg">
               <img src="original.jpg" alt="로고" className="logo-image" />
             </div>
             <div className="description">
-              <p>BUG</p>
+              <p>소모임</p>
               <p>안녕하세요 세상의 bug는 저희가 다 잡아버리겠습니다.</p>
             </div>
           </div>
@@ -68,7 +69,7 @@ function Community() {
             </div>
             <div className="description">
               <p>SWAG</p>
-              <p>안녕하세요 칸예 웨스트입니다. </p>
+              <p>안녕하세요 칸예 웨스트입니다.</p>
             </div>
           </div>
           <div className="component-container">
@@ -92,24 +93,27 @@ function Community() {
         </div>
       </div>
 
-    <footer>
-      <div className="footer-container">
-        <div className="footer-links">
-          <a href="#">| 게시판보기 | </a>
-          <a href="#">교수소개 사이트 | </a>
-          <a href="#">한성대학교 커리큘럼 |</a>
+      <footer>
+        <div className="footer-container">
+          {/* <div className="footer-logo">
+            <img src="hansung.png" alt="Logo">
+          </div> */}
+          <div className="footer-links">
+            <a href="#">| 게시판보기 |</a>
+            <a href="#">교수소개 사이트 |</a>
+            <a href="#">한성대학교 커리큘럼 |</a>
+          </div>
+          <div className="footer-info">
+            <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
+            <p>대표 02-760-4114 입학 02-760-5800</p>
+          </div>
+          <div className="footer-copy">
+            <p>COPYRIGHT(c) HANSUNGUNIVERSITY. ALL RIGHTS RESERVED.</p>
+          </div>
         </div>
-        <div className="footer-info">
-          <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
-          <p>대표 02-760-4114 입학 02-760-5800</p>
-        </div>
-        <div className="footer-copy">
-          <p>COPYRIGHT(c) HANSUNGUNIVERSITY. ALL RIGHTS RESERVED.</p>
-        </div>
-      </div>
-    </footer>
-  </div>
+      </footer>
+    </div>
   );
 }
 
-export default Community;
+export default Somoim;
