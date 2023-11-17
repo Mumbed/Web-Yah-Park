@@ -511,3 +511,106 @@ footer {
     background-color: #555;
   }
   
+
+  /* 공통 스타일 */
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header and Navigation Styles */
+header {
+    width: 100%;
+    background-color: #f5f5f5; /* 헤더 배경색 설정 */
+    /* 추가적인 헤더 스타일링 */
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    position: relative;
+}
+
+.nav-inner {
+    width: 95%; /* 변경 */
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.department-name, .menu-item, .account-action {
+    color: #36384E;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.department-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-right: 20px; /* 간격 추가 */
+}
+
+.menu-container {
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+}
+
+.menu-item {
+    font-size: 16px;
+    margin-right: 20px; /* 간격 추가 */
+}
+
+.account-container {
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+}
+
+.account-action {
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 20px; /* 간격 추가 */
+}
+
+.signup-button {
+    width: 117px;
+    height: 42px;
+    position: relative;
+    background: #2F65DD;
+}
+
+.signup-text {
+    left: 27.75px;
+    top: 11px;
+    position: absolute;
+    color: #F5F5F5;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;   
+}
+
+  /* Navbar links on hover */
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #2F65DD; /* 마우스 오버 시 텍스트 색상 변경 */
+    font-weight: bold; /* 마우스 오버 시 폰트 굵게 */
+    /* 다른 스타일 변경 가능 */
+  }
+  
+  /* Signup button on hover */
+  .signup-button:hover {
+    background-color: #2F65DD; /* 마우스 오버 시 배경색 변경 */
+    /* 다른 스타일 변경 가능 */
+  }

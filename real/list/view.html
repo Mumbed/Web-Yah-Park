@@ -1,33 +1,52 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항</title>
-    <link rel="stylesheet" href="style/ManageView.css">
-   
+  <meta charset="UTF-8">
+  <title>Search Form</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style/view.css">
 </head>
+
 <body>
-    <header>
-        <nav class="nav-container">
-            <div class="nav-inner">
-                <div class="department-name">한성대학교 컴퓨터공학부</div>
-                <div class="menu-container">
-                    <a href="/list/공지사항.html" class="menu-item">공지사항</a>
-                    <a href="/list/학부소개.html" class="menu-item">학부소개</a>
-                    <a href="/list/커뮤니티.html" class="menu-item">커뮤니티</a>
-                    <a href="/list/교수진.html" class="menu-item">교수진</a>
-                    <a href="q&a.html" class="menu-item">Q&A</a>
-                </div>
-                <div class="account-container">
-                    <a href="/login.html" class="account-action">LOGIN</a>
-                    <a href="/signup.html" class="signup-button">
-                        <div class="signup-text">SIGN UP</div>
-                    </a>
-                </div>
-            </div>
-        </nav>
-    </header>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="../main.html">한성대학교 컴퓨터공학부</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="list/q&a.html">공지사항</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/list/학부소개.html">학부소개</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="list/test.html">커뮤니티</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="list/교수진.html">교수진</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="list/q&a.html">Q&A</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login.html">LOGIN</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link signup-button" href="/signup.html">
+                SIGN UP
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
     <div class="board_wrap">
         <div class="board_title">
             <strong>Q&A 게시판</strong>
@@ -67,23 +86,12 @@
                     글 내용이 들어갑니다
                 </div>
             </div>
-            <!-- <div class="cont">
-                <textarea placeholder="내용 입력"></textarea>
-            </div> -->
-
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="댓글을 입력하세요" required>
-            </div>
-              <button type="submit" class="btn btn-primary">작성</button>
-      
             <div class="bt_wrap">
                 <a href="q&a.html" class="on">목록</a>
-               
+                <a href="edit.html">수정</a>
             </div>
         </div>
     </div>
-    
-
     <footer>
         <div class="footer-container">
           <!-- <div class="footer-logo">
