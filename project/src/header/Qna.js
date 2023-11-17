@@ -1,55 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
+import React from 'react';
+import './Qna.css'; // CSS 파일을 import 합니다.
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
 
-<head>
-  <meta charset="UTF-8">
-  <title>Search Form</title>
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="style/q&a.css">
-</head>
-
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="../main.html">한성대학교 컴퓨터공학부</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="q&a.html">공지사항</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="list/학부소개.html">학부소개</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="test.html">커뮤니티</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="교수진.html">교수진</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="q&a.html">Q&A</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">LOGIN</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link signup-button" href="/signup.html">
-                SIGN UP
-              </a>
-            </li>
+function Qna() {
+  return (
+    <div>
+      <header>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <div className="container">
+          <Link className="nav-link" to="/Main">한성대학교 컴퓨터공학부</Link>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav ml-auto">
+                <li className="nav-item">
+                <Link className="nav-link" to="/Qna">공지사항</Link>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="list/학부소개.html">학부소개</a>
+                </li>
+                <li className="nav-item">
+                <Link className="nav-link" to="/Community">커뮤니티</Link>
+                  
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="list/교수진.html">교수진</a>
+                </li>
+                <li className="nav-item">
+                <Link className="nav-link" to="/Qna">Qna</Link>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/login.html">LOGIN</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link signup-button" href="/signup.html">
+                    SIGN UP
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div className="board">
+        <div className="sidebar">
+          <ul>
+            <li><a href="#">학생회 공지사항</a></li>
+            <li><a href="#">동아리</a></li>
+            <li><a href="#">소모임</a></li>
+            {/* More categories */}
           </ul>
         </div>
-      </div>
-    </nav>
-  </header>
-
- 
-    <div class="board_wrap">
+        <div class="board_wrap">
         <div class="board_title">
             <strong>Q&A 게시판</strong>
             <p>여러 질문하세요 컴공 학생여러분 이시발련들아</p>
@@ -100,45 +105,41 @@
                 </div>
             </div>
             <div class="board_page">
-                <a href="#" class="bt first"><<</a>
-                <a href="#" class="bt prev"><</a>
+                <a href="#" class="bt first"> ## </a>
+                <a href="#" class="bt prev"> # </a>
                 <a href="#" class="num on">1</a>
                 <a href="#" class="num">2</a>
                 <a href="#" class="num">3</a>
                 <a href="#" class="num">4</a>
                 <a href="#" class="num">5</a>
-                <a href="#" class="bt next">></a>
-                <a href="#" class="bt last">>></a>
+                <a href="#" class="bt next">#</a>
+                <a href="#" class="bt last">##</a>
             </div>
             <div class="bt_wrap">
                 <a href="write.html" class="on">등록</a>
-                <!--<a href="#">수정</a>-->
             </div>
         </div>
     </div>
-    <footer>
-        <div class="footer-container">
-          <!-- <div class="footer-logo">
-            <img src="hansung.png" alt="Logo">
-          </div> -->
-          <div class="footer-links">
-            <a href="#">|  게시판보기  | </a>
-            <a href="#">교수소개 사이트    | </a>
-            <a href="#">한성대학교 커리큘럼  |</a>
+    </div>
+      <footer>
+        <div className="footer-container">
+          <div className="footer-links">
+            <a href="#">| 게시판보기 |</a>
+            <a href="#">교수소개 사이트 |</a>
+            <a href="#">한성대학교 커리큘럼 |</a>
           </div>
-          <div class="footer-info">
+          <div className="footer-info">
             <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
             <p>대표 02-760-4114 입학 02-760-5800</p>
           </div>
-          <div class="footer-copy">
+          <div className="footer-copy">
             <p>COPYRIGHT(c) HANSUNGUNIVERSITY. ALL RIGHTS RESERVED.</p>
-            
           </div>
         </div>
-        
       </footer>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+    
+    </div>
+  );
+}
+
+export default Qna;
