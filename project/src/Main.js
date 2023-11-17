@@ -31,7 +31,7 @@ function Main() {
                   
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="list/교수진.html">교수진</a>
+                <Link className="nav-link" to="/Professor">교수진</Link>
                 </li>
                 <li className="nav-item">
                 <Link className="nav-link" to="/Qna">Qna</Link>
@@ -39,11 +39,7 @@ function Main() {
                 <li className="nav-item">
                   <a className="nav-link" href="/login.html">LOGIN</a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link signup-button" href="/signup.html">
-                    SIGN UP
-                  </a>
-                </li>
+              
               </ul>
             </div>
           </div>

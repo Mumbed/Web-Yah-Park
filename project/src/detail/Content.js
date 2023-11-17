@@ -18,7 +18,7 @@ function Content() {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                <Link className="nav-link" to="/Qna">공지사항</Link>
+                <Link className="nav-link" to="/Notice">공지사항</Link>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="list/학부소개.html">학부소개</a>
@@ -28,7 +28,7 @@ function Content() {
                   
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="list/교수진.html">교수진</a>
+                <Link className="nav-link" to="/Professor">교수진</Link>
                 </li>
                 <li className="nav-item">
                 <Link className="nav-link" to="/Qna">Qna</Link>
@@ -36,11 +36,7 @@ function Content() {
                 <li className="nav-item">
                   <a className="nav-link" href="/login.html">LOGIN</a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link signup-button" href="/signup.html">
-                    SIGN UP
-                  </a>
-                </li>
+              
               </ul>
             </div>
           </div>

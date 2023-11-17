@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './style/Edit.css';
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
+import { Routes } from 'react-router-dom'; // Routes 추가
 
 function Edit() {
   const [title, setTitle] = useState('글 제목이 들어갑니다');
@@ -12,7 +14,7 @@ function Edit() {
       <header>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container">
-            <a className="navbar-brand" href="../main.html">한성대학교 컴퓨터공학부</a>
+          <Link className="nav-link" to="/Main">한성대학교 컴퓨터공학부</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
@@ -20,28 +22,25 @@ function Edit() {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <a className="nav-link" href="list/q&a.html">공지사항</a>
+                <Link className="nav-link" to="/Notice">공지사항</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/list/학부소개.html">학부소개</a>
+                  <a className="nav-link" href="list/학부소개.html">학부소개</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="list/test.html">커뮤니티</a>
+                <Link className="nav-link" to="/Community">커뮤니티</Link>
+                  
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="list/교수진.html">교수진</a>
+                <Link className="nav-link" to="/Professor">교수진</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="list/q&a.html">Q&A</a>
+                <Link className="nav-link" to="/Qna">Qna</Link>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/login.html">LOGIN</a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link signup-button" href="/signup.html">
-                    SIGN UP
-                  </a>
-                </li>
+              
               </ul>
             </div>
           </div>
