@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <title>Search Form</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="style/main.css">
+  <link rel="stylesheet" type="text/css" href="style/card.css">
+  <link rel="stylesheet" type="text/css" href="style/theme.css">
 </head>
 
 <body>
@@ -50,15 +51,33 @@
 
 <div class = "main-content">
   <div class = "banner">
-    <img src="/real/banner.png" alt="Night View" />
-  </div>
-  <div class = "cs-guide">
-    <img src="/real/cs1.png" alt="guide" />
+    <img src="./banner.png" alt="Night View" />
   </div>
 
-  <div class = "cs-guide2">
-    <img src="/real/mobile.png" alt="guide2" />
+  <div class="card-container">
+    <div class="card">
+      <img src="icon-android.png" alt="Android Logo" />
+      <h2>android</h2>
+      <p>안드로이드 관련 설명 텍스트가 여기에 옵니다...</p>
+      <a href="#">Learn more →</a>
+    </div>
+    <div class="card">
+      <img src="icon-react.png" alt="React Logo" />
+      <h2>웹 플랫폼</h2>
+      <p>리액트 관련 설명 텍스트가 여기에 옵니다...</p>
+      <a href="#">Learn more →</a>
+    </div>
+    <div class="card">
+      <img src="icon-data.png" alt="Data Logo" />
+      <h2>빅데이터플랫폼</h2>
+      <p>빅데이터 관련 설명 텍스트가 여기에 옵니다...</p>
+      <a href="#">Learn more →</a>
+    </div>
+    <!-- ... 다른 카드들이 계속됩니다 ... -->
   </div>
+  
+
+</section>
   <div class="map-container">
     <iframe
       width="500"
