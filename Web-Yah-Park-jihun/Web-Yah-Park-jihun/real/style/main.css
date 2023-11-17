@@ -161,7 +161,7 @@ footer {
     height: auto; /* Maintain aspect ratio */
     max-width: 100%; /* Optional: ensures the image doesn't exceed its original size */
     display: block; /* Remove any extra space below the image */
-    margin-bottom: 200px; /* 아래 여백을 추가합니다. 필요한 만큼 조정할 수 있습니다. */
+    margin-bottom: 100px; /* 아래 여백을 추가합니다. 필요한 만큼 조정할 수 있습니다. */
     margin-top : 100px;
 
   }

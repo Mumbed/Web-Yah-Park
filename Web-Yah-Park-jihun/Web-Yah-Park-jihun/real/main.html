@@ -10,49 +10,78 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">한성대학교 컴퓨터공학부</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="list/q&a.html">공지사항</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="list/학부소개.html">학부소개</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="list/test.html">커뮤니티</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="list/교수진.html">교수진</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="list/q&a.html">Q&A</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/login.html">LOGIN</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link signup-button" href="/signup.html">
-                SIGN UP
-              </a>
-            </li>
-          </ul>
-        </div>
+  <!--헤더 부분-->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
+    <div class="container"><a class="navbar-brand d-flex align-items-center fw-semi-bold fs-3" href="index.html"> <img class="me-3" src="./logo.png" alt="" /></a>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto pt-2 pt-lg-0 font-base">
+          <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="">공지사항</a></li>
+          <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="">학부소개</a></li>
+          <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="">커뮤니티</a></li>
+          <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="">교수진</a></li>
+        </ul>
+        <form class="ps-lg-5">
+          <button class="btn btn-outline-primary order-0" type="submit">로그인</button>
+        </form>
       </div>
-    </nav>
-  </header>
-
+    </div>
+  </nav>
 <div class = "main-content">
   <div class = "banner">
     <img src="./banner.png" alt="Night View" />
   </div>
+
+  <!--배너 밑에 뭐넣을지 고민중-->
+<!--
+  <section id="company-services" class="padding-large">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 ">
+          <div class="icon-box d-flex">
+            <div class="icon-box-icon pe-3 pb-3">
+            </div>
+            <div class="icon-box-content">
+              <h3 class="card-title text-uppercase text-dark">공지사항</h3>
+              <p>이동하기</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 ">
+          <div class="icon-box d-flex">
+            <div class="icon-box-icon pe-3 pb-3">
+            </div>
+            <div class="icon-box-content">
+              <h3 class="card-title text-uppercase text-dark">학부소개</h3>
+              <p>이동하기</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 ">
+          <div class="icon-box d-flex">
+            <div class="icon-box-icon pe-3 pb-3">
+            </div>
+            <div class="icon-box-content">
+              <h3 class="card-title text-uppercase text-dark">커뮤니티</h3>
+              <p>이동하기</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 ">
+          <div class="icon-box d-flex">
+            <div class="icon-box-icon pe-3 pb-3">
+            </div>
+            <div class="icon-box-content">
+              <h3 class="card-title text-uppercase text-dark">교수진</h3>
+              <p>이동하기</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+-->
+
 
   <section id="services">
 
@@ -67,12 +96,12 @@
       <div class="row flex-center h-100">
         <div class="col-xl-9">
           <div class="row justify-content-center">
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
               <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-4">
                 <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="mobil_logo.png" height="60" alt="services" />
                   <div class="card-body">
                     <h6 class="fw-light fs-1 heading-color">모바일SW트랙</h6>
-                    <p class="mt-3 mb-md-0 mb-lg-3">네트워크 지식과 프로그래밍 기술을 바탕으로 스마트폰 OS 및 소프트웨어 개발, 임베디드 소프트웨어 및 IoT 서비스 기술, 모바일 UI/UX 교육</p><a class="btn btn-lg ps-0 pe-3 text-primary" href="#" role="button">Learn more
+                    <p class="mt-3 mb-md-0 mb-lg-3">네트워크 지식과 프로그래밍 기술을 바탕으로 스마트폰 OS 및 소프트웨어 개발, 임베디드 소프트웨어 및 IoT 서비스 기술, 모바일 UI/UX 교육</p><a class="btn btn-lg ps-0 pe-3 text-primary mt-8" href="#" role="button">Learn more
                       <svg class="bi bi-arrow-right-short" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
                       </svg></a>
@@ -80,12 +109,12 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
               <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-4">
                 <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="web_logo.png" height="60" alt="services" />
                   <div class="card-body">
                     <h6 class="fw-light fs-1 heading-color">웹 공학트랙</h6>
-                    <p class="mt-3 mb-md-0 mb-lg-3">산업 현장에서 활용하고 있는 전문 기술 및 도구를 바탕으로 웹 서비스를 구축하고 분석할 수 있는 웹 공학 소프트웨어 개발 전문가 양성</p><a class="btn btn-lg ps-0 pe-3 text-primary" href="#" role="button">Learn more
+                    <p class="mt-3 mb-md-0 mb-lg-3">산업 현장에서 활용하고 있는 전문 기술 및 도구를 바탕으로 웹 서비스를 구축하고 분석할 수 있는 웹 공학 소프트웨어 개발 전문가 양성</p><a class="btn btn-lg ps-0 pe-3 text-primary mt-8" href="#" role="button">Learn more
                       <svg class="bi bi-arrow-right-short" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
                       </svg></a>
@@ -93,12 +122,12 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
               <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-4">
                 <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="database_logo.png" height="60" alt="services" />
                   <div class="card-body">
                     <h6 class="fw-light fs-1 heading-color">빅데이터트랙</h6>
-                    <p class="mt-3 mb-md-0 mb-lg-3">기본적인 데이터베이스 이론 및 설계 기술의 습득을 시작으로 다양한 분야에서 다양한 형태로 발생하는 빅데이터를 실질적으로 수집/분석/활용할 수 있는 데이터 마이닝 기술 및 실제 프로젝트 수행 교과목 등을 통해 사회 수요에 맞는 실무 중심의 교육 </p><a class="btn btn-lg ps-0 pe-3 text-primary" href="#" role="button">Learn more
+                    <p class="mt-3 mb-md-0 mb-lg-3">기본적인 데이터베이스 이론 및 설계 기술의 습득을 시작으로 다양한 분야에서 다양한 형태로 발생하는 빅데이터를 실질적으로 수집/분석/활용할 수 있는 데이터 마이닝 기술 및 실제 프로젝트 수행 교과목 등을 통해 사회 수요에 맞는 실무 중심의 교육 </p><a class="btn btn-lg ps-0 pe-3 text-primary mt-4" href="#" role="button">Learn more
                       <svg class="bi bi-arrow-right-short" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
                       </svg></a>
@@ -106,12 +135,12 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
               <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-4">
                 <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="vr_logo.png" height="60" alt="services" />
                   <div class="card-body">
                     <h6 class="fw-light fs-1 heading-color">디지털콘텐츠/가상현실 트랙</h6>
-                    <p class="mt-3 mb-md-0 mb-lg-3">능숙한 콘텐츠 제작 도구 사용 기술을 바탕으로 실무적 콘텐츠 제작</p><a class="btn btn-lg ps-0 pe-3 text-primary" href="#" role="button">Learn more
+                    <p class="mt-3 mb-md-0 mb-lg-3">능숙한 콘텐츠 제작 도구 사용 기술을 바탕으로 실무적 콘텐츠 제작</p><a class="btn btn-lg ps-0 pe-3 text-primary mt-9" href="#" role="button">Learn more
                       <svg class="bi bi-arrow-right-short" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
                       </svg></a>
@@ -193,6 +222,98 @@
   </div><!-- end of .container-->
 
 </section>
+
+<!--동아리 및 소모임 소개-->
+<section class="bg-100" id=""> <!--이곳에 id값을 주어서 링크를 통해 넘어 올 수 있음-->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 mx-auto text-center my-5">
+        <h5 class="fw-light fs-3 fs-lg-5 lh-sm mb-3">동아리 / 소모임 소식</h5>
+        <p class="mb-3">컴퓨터공학부의 동아리 및 소모임 정보를 소개합니다.</p>
+      </div>
+    </div>
+    <div class="row flex-center h-100">
+      <div class="col-xl-9">
+        <div class="carousel slide" id="" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <div class="row h-100 justify-content-center">
+                <div class="col-md-4 mb-4">
+                  <div class="card h-100 shadow card-span bg-100"><img class="card-img-top" src="./bugi.png" alt="" />
+                    <div class="card-body">
+                      <h5 class="fs-lg-1 my-3 fw-light">동아리</h5>
+                      <p class="mb-0 fw-light lh-base">동아리 설명</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div class="card h-100 shadow card-span bg-100"><img class="card-img-top" src="./bugi.png" alt="" />
+                    <div class="card-body">
+                      <h5 class="fs-lg-1 my-3 fw-light">동아리</h5>
+                      <p class="mb-0 fw-light lh-base">동아리 설명</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div class="card h-100 shadow card-span bg-100"><img class="card-img-top" src="./bugi.png" alt="news" />
+                    <div class="card-body">
+                      <h5 class="fs-lg-1 my-3 fw-light">동아리</h5>
+                      <p class="mb-0 fw-light lh-base">동아리 설명</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row h-100 justify-content-center">
+                <div class="col-md-4 mb-4">
+                  <div class="card h-100 shadow card-span bg-100"><img class="card-img-top" src="./bugi.png" alt="news" />
+                    <div class="card-body">
+                      <h5 class="fs-lg-1 my-3 fw-light">동아리</h5>
+                      <p class="mb-0 fw-light lh-base">동아리 설명</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div class="card h-100 shadow card-span bg-100"><img class="card-img-top" src="./bugi.png" alt="news" />
+                    <div class="card-body">
+                      <h5 class="fs-lg-1 my-3 fw-light">동아리</h5>
+                      <p class="mb-0 fw-light lh-base">동아리 설명</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div class="card h-100 shadow card-span bg-100"><img class="card-img-top" src="./bugi.png" alt="news" />
+                    <div class="card-body">
+                      <h5 class="fs-lg-1 my-3 fw-light">동아리</h5>
+                      <p class="mb-0 fw-light lh-base">동아리 설명</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--하단 슬라이드 진행바 부분 슬라이더는 리액트로 구현하기 때문에 필요 없음-->
+          <!--
+          <div class="row mt-3 mb-7 flex-center">
+            <div class="col-auto position-relative z-index-2">
+              <ol class="carousel-indicators">
+                <li class="active mx-2" data-bs-target="#carouselCountries" data-bs-slide-to="0"></li>
+                <li class="mx-2" data-bs-target="#carouselCountries" data-bs-slide-to="1"></li>
+              </ol>
+            </div>
+          </div>
+          -->
+        </div>
+      </div>
+    </div>
+  </div><!-- end of .container-->
+
+</section>
+
+
+
   <div class="map-container">
     <iframe
       width="500"
