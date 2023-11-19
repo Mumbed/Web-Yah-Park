@@ -1,6 +1,6 @@
 /* styles.css */
 
-:root {
+/* :root {
     --primary: #343a40;
 }
 
@@ -37,7 +37,7 @@ body {
 
 h3 {
     font-family: fantasy, cursive;
-}
+} */
 
 @keyframes zoomin {
     0% {
@@ -52,7 +52,7 @@ h3 {
 }
 
 .sliderWrapper {
-    width: 180%;
+    width: 50%;
     margin: 0 auto;
     padding: clamp(1.5rem, 3vw, 3rem);
     position: relative;
