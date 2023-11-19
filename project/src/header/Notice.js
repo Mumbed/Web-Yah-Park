@@ -2,96 +2,79 @@ import React from 'react';
 import './style/Notice.css'; // CSS 파일을 import 합니다.
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
+import noticedata from '../notice.json';
 
 function Notice() {
   return (
     <div>
       <header>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <div className="container">
-          <Link className="nav-link" to="/Main">한성대학교 컴퓨터공학부</Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                <Link className="nav-link" to="/Notice">공지사항</Link>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="list/학부소개.html">학부소개</a>
-                </li>
-                <li className="nav-item">
-                <Link className="nav-link" to="/Community">커뮤니티</Link>
-                  
-                </li>
-                <li className="nav-item">
-                <Link className="nav-link" to="/Professor">교수진</Link>
-                </li>
-                <li className="nav-item">
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
+      <div className="container">
+      <Link to="/Main" className="navbar-brand d-flex align-items-center fw-semi-bold fs-3">
+          <img className="me-3" src="./logo.png" alt="" />
+        </Link>
+        <button
+          className="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+          <ul className="navbar-nav mx-auto pt-2 pt-lg-0 font-base">
+            <li className="nav-item px-2" data-anchor="data-anchor">
+            <Link className="nav-link" to="/Notice">공지사항</Link></li>
+            <li className="nav-item px-2" data-anchor="data-anchor">
+            <Link className="nav-link" to="/IntroMain">학부소개</Link></li>
+            <li className="nav-item px-2" data-anchor="data-anchor">
+            <Link className="nav-link" to="/Community">커뮤니티</Link></li>
+            <li className="nav-item px-2" data-anchor="data-anchor">
+            <Link className="nav-link" to="/Professor">교수진</Link></li>
+            <li className="nav-item px-2" data-anchor="data-anchor">
                 <Link className="nav-link" to="/Qna">Qna</Link>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/login.html">LOGIN</a>
-                </li>
-              
-              </ul>
-            </div>
-          </div>
-        </nav>
+          </ul>
+          <form className="ps-lg-5">
+        <Link to="/Login" className="btn btn-outline-primary order-0">
+          로그인
+        </Link>
+      </form>
+        </div>
+      </div>
+    </nav>
       </header>
 
       <div className="board">
-        <div class="board_wrap">
-        <div class="board_title">
+        <div className="board_wrap">
+          <div className="board_title">
             <strong>공지사항</strong>
             <p>한성대학교 컴퓨터 공학부에서 중요한 정보들을 공지해드립니다.</p>
-        </div>
-        <div class="board_list_wrap">
-            <div class="board_list">
-                <div class="top">
-                    <div class="num">번호</div>
-                    <div class="title">제목</div>
-                    <div class="writer">글쓴이</div>
-                    <div class="date">작성일</div>
-                    <div class="count">조회</div>
+          </div>
+          <div className="board_list_wrap">
+            <div className="board_list">
+              <div className="top">
+                <div className="num">번호</div>
+                <div className="title">제목</div>
+                <div className="writer">글쓴이</div>
+                <div className="date">작성일</div>
+                <div className="count">조회</div>
+              </div>
+
+              {noticedata.map((notice) => (
+                <div key={notice.id}>
+                  <div className="num">{notice.id}</div>
+                  <div className="title">
+                  <Link className="title" to={`/View?id=${notice.id}`}>{notice.title}</Link>
+                   </div>
+                  <div className="writer">{notice.author}</div>
+                  <div className="date">{notice.date}</div>
+                  <div className="count">{notice.views}</div>
                 </div>
-                <div>
-                    <div class="num">5</div>
-                    <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">4</div>
-                    <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">3</div>
-                    <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">2</div>
-                    <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">1</div>
-                    <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
+              ))}
             </div>
             <div class="board_page">
                 <a href="#" class="bt first"> ## </a>
@@ -105,11 +88,11 @@ function Notice() {
                 <a href="#" class="bt last">##</a>
             </div>
             <div class="bt_wrap">
-                <a href="write.html" class="on">등록</a>
+            <Link className="nav-link" to="/Write">등록</Link>
+            </div>          
             </div>
         </div>
-    </div>
-    </div>
+      </div>
       <footer>
         <div className="footer-container">
           <div className="footer-links">

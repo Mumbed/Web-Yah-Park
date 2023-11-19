@@ -7,39 +7,44 @@ function Somoim() {
   return (
     <div>
       <header>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <div className="container">
-          <Link className="nav-link" to="/Main">한성대학교 컴퓨터공학부</Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                <Link className="nav-link" to="/Notice">공지사항</Link>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="list/학부소개.html">학부소개</a>
-                </li>
-                <li className="nav-item">
-                <Link className="nav-link" to="/Community">커뮤니티</Link>
-                  
-                </li>
-                <li className="nav-item">
-                <Link className="nav-link" to="/Professor">교수진</Link>
-                </li>
-                <li className="nav-item">
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
+      <div className="container">
+      <Link to="/Main" className="navbar-brand d-flex align-items-center fw-semi-bold fs-3">
+          <img className="me-3" src="./logo.png" alt="" />
+        </Link>
+        <button
+          className="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+          <ul className="navbar-nav mx-auto pt-2 pt-lg-0 font-base">
+            <li className="nav-item px-2" data-anchor="data-anchor">
+            <Link className="nav-link" to="/Notice">공지사항</Link></li>
+            <li className="nav-item px-2" data-anchor="data-anchor">
+            <Link className="nav-link" to="/IntroMain">학부소개</Link></li>
+            <li className="nav-item px-2" data-anchor="data-anchor">
+            <Link className="nav-link" to="/Community">커뮤니티</Link></li>
+            <li className="nav-item px-2" data-anchor="data-anchor">
+            <Link className="nav-link" to="/Professor">교수진</Link></li>
+            <li className="nav-item px-2" data-anchor="data-anchor">
                 <Link className="nav-link" to="/Qna">Qna</Link>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/login.html">LOGIN</a>
-                </li>
-              
-              </ul>
-            </div>
-          </div>
-        </nav>
+          </ul>
+          <form className="ps-lg-5">
+        <Link to="/Login" className="btn btn-outline-primary order-0">
+          로그인
+        </Link>
+      </form>
+        </div>
+      </div>
+    </nav>
       </header>
       
       <div className="board">
