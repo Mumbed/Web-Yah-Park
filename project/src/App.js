@@ -24,7 +24,7 @@ import Edit from './detail/Edit';
 import Write from './detail/Write';
 
 
-
+  
 function App() {
   return (
     <Router>
