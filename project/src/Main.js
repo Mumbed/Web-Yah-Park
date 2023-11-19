@@ -2,6 +2,10 @@ import React from 'react';
 import './Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+import Slider from './maincontents/Slider'; // 경로는 프로젝트 구조에 따라 조정
+import images from './maincontents/images';
+
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
 import { Routes } from 'react-router-dom'; // Routes 추가
 
@@ -10,6 +14,7 @@ function Main() {
   return (
 
     <div>
+      <div className='header'>
       <header>
         <nav className="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
           <div className="container">
@@ -50,6 +55,7 @@ function Main() {
           </div>
         </nav>
       </header>
+      </div>
 
       <div className="main-content">
         <div className="banner">
@@ -165,6 +171,10 @@ function Main() {
             </div>
           </div>
         </section>
+
+        <div className="slider">
+      <Slider title="React Slider" slides={images} />
+      </div>
 
         {/* 지도 부분 */}
         <div className="map-container">

@@ -1,126 +1,24 @@
 /* 공통 스타일 */
-body, html {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  font-family: 'Arial', sans-serif;
-  display: flex;
-  flex-direction: column;
 
-}
 
-/* Header and Navigation Styles */
-header {
-  width: 100%;
-  background-color: #f5f5f5; /* 헤더 배경색 설정 */
-  /* 추가적인 헤더 스타일링 */
-}
-
-.nav-container {
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-  position: relative;
-}
-
-.nav-inner {
-  width: 95%; /* 변경 */
-  position: relative;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-}
-
-.department-name, .menu-item, .account-action {
-  color: #36384E;
-  font-family: Poppins;
-  font-weight: 500;
-  line-height: 20px;
-  word-wrap: break-word;
-}
-
-.department-name {
-  font-size: 24px;
-  font-weight: 700;
-  margin-right: 20px; /* 간격 추가 */
-}
-
-.menu-container {
-  justify-content: flex-start;
-  align-items: center;
-  display: flex;
-}
-
-.menu-item {
-  font-size: 16px;
-  margin-right: 20px; /* 간격 추가 */
-}
-
-.account-container {
-  justify-content: flex-start;
-  align-items: center;
-  display: flex;
-}
-
-.account-action {
-  font-size: 16px;
-  font-weight: 600;
-  margin-right: 20px; /* 간격 추가 */
-}
-
-.signup-button {
-  width: 117px;
-  height: 42px;
-  position: relative;
-  background: #2F65DD;
-}
-
-.signup-text {
-  left: 27.75px;
-  top: 11px;
-  position: absolute;
-  color: #F5F5F5;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.navbar-nav .nav-item .nav-link:hover {
-  color: #2F65DD; /* 마우스 오버 시 텍스트 색상 변경 */
-  font-weight: bold; /* 마우스 오버 시 폰트 굵게 */
-  /* 다른 스타일 변경 가능 */
-  }
-  
-  .signup-button:hover {
-  background-color: #2F65DD; /* 마우스 오버 시 배경색 변경 */
-  /* 다른 스타일 변경 가능 */
-  }
-  
-
-/* banner */
 .main-content {
-  flex-grow: 1; /* 콘텐츠 영역이 화면의 나머지 공간을 채우도록 합니다. */
-  display: flex;
-  flex-direction: column;
+  width: 100%; /* 화면 전체 너비를 사용합니다. */
+  padding: 0; /* 내부 여백을 제거합니다. */
+  margin: 0 auto; /* 수평 중앙에 위치하도록 설정합니다. */
+  text-align: center;
 }
+
 
 .banner img {
   width: 100%; /* Make the image responsive to the width of its container */
   height: auto; /* Maintain aspect ratio */
   max-width: 100%; /* Optional: ensures the image doesn't exceed its original size */
-  display: block; /* Remove any extra space below the image */
   margin-bottom: 200px; /* 아래 여백을 추가합니다. 필요한 만큼 조정할 수 있습니다. */
   margin-top : 100px;
 
 }
 .map-container {
   width: 70%; /* or whatever width you prefer */
-  float: left; /* aligns the map to the left */
-  margin : 100px;
 
 }
 
@@ -129,36 +27,6 @@ a {
   float: right; /* aligns the details to the right */
   /* Add additional styling such as padding, font, etc. */
 }
-
-/* Clear floats after the columns */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-.cs-guide {
-  text-align: center; /* 가로 가운데 정렬을 위해 부모 요소를 가운데 정렬합니다. */
-  padding : 50px
-
-}
-.cs-guide img {
-  width: 70%; /* 이미지의 너비를 70%로 설정합니다. */
-  height: auto; /* 이미지의 세로 크기를 자동으로 조정하여 가로세로 비율을 유지합니다. */
-  max-width: 100%; /* 이미지가 원래 크기를 초과하지 않도록 최대 너비를 100%로 설정합니다. */
-  display: block; /* 이미지가 블록 레벨 요소로 표시되어 공간을 차지하지 않도록 합니다. */
-  margin: 0 auto; /* 가로 중앙 정렬을 위해 좌우 마진을 자동으로 설정합니다. */
-}
-.cs-guide2 {
-  text-align: center; /* 가로 가운데 정렬을 위해 부모 요소를 가운데 정렬합니다. */
-}
-.cs-guide2 img {
-  width: 70%; /* 이미지의 너비를 70%로 설정합니다. */
-  height: auto; /* 이미지의 세로 크기를 자동으로 조정하여 가로세로 비율을 유지합니다. */
-  max-width: 100%; /* 이미지가 원래 크기를 초과하지 않도록 최대 너비를 100%로 설정합니다. */
-  display: block; /* 이미지가 블록 레벨 요소로 표시되어 공간을 차지하지 않도록 합니다. */
-  margin: 0 auto; /* 가로 중앙 정렬을 위해 좌우 마진을 자동으로 설정합니다. */
-}
-
 
 
 
@@ -173,16 +41,13 @@ footer {
   width: 100%;
   background-color: #f5f5f5;
   
-  /* 추가적인 푸터 스타일링 */
 }
-
 
 .footer-logo img {
   width: 50px; /* Adjust as necessary */
 }
 
 .footer-links {
-  display: flex;
   gap: 20px;
   justify-content: center;
   padding: 20px 0;
