@@ -1,13 +1,74 @@
 import React, { useState } from 'react';
-import './style/Edit.css';
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
-import { Routes } from 'react-router-dom'; // Routes 추가
+import { useNavigate } from 'react-router-dom'; // useNavigate를 import
 
-function Edit() {
-  const [title, setTitle] = useState('글 제목이 들어갑니다');
-  const [author, setAuthor] = useState('김이름');
-  const [password, setPassword] = useState('1234');
-  const [content, setContent] = useState('글 내용이 들어갑니다.');
+import './style/Write.css'; // Import your CSS file here
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
+import noticedata from '../notice.json';
+
+function Write() {
+    const navigate = useNavigate(); // useNavigate를 사용
+
+    const [title, setTitle] = useState('');
+    const [author, setAuthor] = useState('');
+    const [password, setPassword] = useState('');
+    const [content, setContent] = useState('');
+  
+    const handleTitleChange = (e) => {
+      setTitle(e.target.value);
+    };
+  
+    const handleAuthorChange = (e) => {
+      setAuthor(e.target.value);
+    };
+  
+    const handlePasswordChange = (e) => {
+      setPassword(e.target.value);
+    };
+  
+    const handleContentChange = (e) => {
+      setContent(e.target.value);
+    };
+  
+    const handleRegisterClick = () => {
+        const nextId = noticedata.length + 1;
+
+      // Create a new notice object
+      const newNotice = {
+        id: nextId,
+        title: title,
+        author: author,
+        password: password,
+        content: content,
+        date: new Date().toLocaleDateString(), // Use toLocaleDateString to get date in 'YYYY-MM-DD' format
+        views: 0, // Initial views count
+      };
+  
+      // Add the new notice to the existing noticedata array
+      noticedata.push(newNotice);
+  
+      // Update the notice.json file (You may need to use a server or file system API)
+      // Example:
+      // fetch('/api/update-notices', {
+      //   method: 'POST',
+      //   body: JSON.stringify(noticedata),
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      // });
+  
+      // Clear the input fields
+      setTitle('');
+      setAuthor('');
+      setPassword('');
+      setContent('');
+      navigate('/Notice'); // useNavigate를 사용하여 페이지 이동
+
+  
+      // Optionally, redirect to the notice list page
+      // history.push('/notices');
+    };
+
 
   return (
     <div>
@@ -55,35 +116,37 @@ function Edit() {
       <div className="board_wrap">
         <div className="board_title">
           <strong>Q&A 게시판</strong>
+          <p>여러 질문하세요 컴공 학생여러분 이시발련들아</p>
         </div>
         <div className="board_write_wrap">
           <div className="board_write">
             <div className="title">
               <dl>
                 <dt>제목</dt>
-                <dd><input type="text" placeholder="제목 입력" value={title} onChange={(e) => setTitle(e.target.value)} /></dd>
+                <dd><input type="text" placeholder="제목 입력" value={title} onChange={handleTitleChange} /></dd>
               </dl>
             </div>
             <div className="info">
               <dl>
                 <dt>글쓴이</dt>
-                <dd><input type="text" placeholder="글쓴이 입력" value={author} onChange={(e) => setAuthor(e.target.value)} /></dd>
+                <dd><input type="text" placeholder="글쓴이 입력" value={author} onChange={handleAuthorChange} /></dd>
               </dl>
               <dl>
                 <dt>비밀번호</dt>
-                <dd><input type="password" placeholder="비밀번호 입력" value={password} onChange={(e) => setPassword(e.target.value)} /></dd>
+                <dd><input type="password" placeholder="비밀번호 입력" value={password} onChange={handlePasswordChange} /></dd>
               </dl>
             </div>
             <div className="cont">
-              <textarea placeholder="내용 입력" value={content} onChange={(e) => setContent(e.target.value)} />
+              <textarea placeholder="내용 입력" value={content} onChange={handleContentChange}></textarea>
             </div>
           </div>
           <div className="bt_wrap">
-            <a href="view.html" className="on">수정</a>
-            <a href="view.html">취소</a>
+            <button onClick={handleRegisterClick} className="on">등록</button>
+            <Link to="/list.html">취소</Link>
           </div>
         </div>
       </div>
+
       <footer>
         <div className="footer-container">
           <div className="footer-links">
@@ -104,4 +167,4 @@ function Edit() {
   );
 }
 
-export default Edit;
+export default Write;

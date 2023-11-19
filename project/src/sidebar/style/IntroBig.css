@@ -1,0 +1,264 @@
+header {
+width: 100%;
+background-color: #f5f5f5; /* 헤더 배경색 설정 */
+/* 추가적인 헤더 스타일링 */
+}
+
+h2{
+font-family: 'NanumBarunGothic', sans-serif;
+font-weight: bold;
+}
+h3{
+font-family: 'NanumBarunGothic', sans-serif;
+font-weight: bold;
+
+}
+
+
+.nanumbarungothic * {
+font-family: 'NanumBarunGothic', sans-serif;
+}
+
+@font-face {
+font-family: 'NanumBarunGothic';
+font-style: normal;
+font-weight: 400;
+src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
+
+@font-face {
+font-family: 'NanumBarunGothic';
+font-style: normal;
+font-weight: 700;
+src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'NanumBarunGothic';
+font-style: normal;
+font-weight: 300;
+src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+
+
+
+
+p {
+font-family: 'NanumBarunGothic', sans-serif;
+font-size: 18px;
+
+}
+.body{
+color: var(--bs-body-color);
+}
+.nav-container {
+width: 100%;
+height: 100%;
+padding: 30px;
+position: relative;
+}
+
+.nav-inner {
+width: 95%; /* 변경 */
+position: relative;
+justify-content: space-between;
+align-items: center;
+display: flex;
+}
+
+.department-name, .menu-item, .account-action {
+color: #36384E;
+font-family: Poppins;
+font-weight: 500;
+line-height: 20px;
+word-wrap: break-word;
+}
+
+.department-name {
+font-size: 24px;
+font-weight: 700;
+margin-right: 20px; /* 간격 추가 */
+}
+
+.menu-container {
+justify-content: flex-start;
+align-items: center;
+display: flex;
+}
+
+.menu-item {
+font-size: 16px;
+margin-right: 20px; /* 간격 추가 */
+}
+
+.account-container {
+justify-content: flex-start;
+align-items: center;
+display: flex;
+}
+
+.account-action {
+font-size: 16px;
+font-weight: 600;
+margin-right: 20px; /* 간격 추가 */
+}
+
+.signup-button {
+width: 117px;
+height: 42px;
+position: relative;
+background: #2F65DD;
+}
+
+.signup-text {
+left: 27.75px;
+top: 11px;
+position: absolute;
+color: #F5F5F5;
+font-size: 16px;
+font-weight: 600;
+}
+
+a {
+text-decoration: none;
+color: inherit;   
+}
+
+/* Navbar links on hover */
+.navbar-nav .nav-item .nav-link:hover {
+color: #2F65DD; /* 마우스 오버 시 텍스트 색상 변경 */
+font-weight: bold; /* 마우스 오버 시 폰트 굵게 */
+/* 다른 스타일 변경 가능 */
+}
+
+/* Signup button on hover */
+.signup-button:hover {
+background-color: #2F65DD; /* 마우스 오버 시 배경색 변경 */
+/* 다른 스타일 변경 가능 */
+}
+
+/* Breadcrumb Navigation Styles */
+.breadcrumb-nav {
+font-size: 16px;
+padding: 8px 20px;
+background-color: #f5f5f5;
+color: #333;
+border-bottom: 1px solid #e1e1e1;
+width: 100%;
+box-sizing: border-box;
+}
+
+.breadcrumb-nav a {
+color: #0275d8;
+text-decoration: none;
+margin-right: 5px;
+}
+
+.breadcrumb-nav a:hover {
+text-decoration: underline;
+}
+
+
+
+.notice-type {
+color: red;
+}
+
+.pagination {
+text-align: center;
+padding: 10px;
+}
+
+.pagination button {
+padding: 5px 10px;
+margin: 0 5px;
+border: 1px solid #ddd;
+background-color: #f8f8f8;
+}
+/* 메인 컨텐츠 스타일 */
+.main-content {
+display: flex;
+flex-direction: column; /* 가로 방향에서 세로 방향으로 변경 */
+align-items: center; /* 가운데 정렬 */
+padding: 20px;
+width: calc(100% - 200px); /* 사이드바 너비를 제외한 전체 너비 */
+margin-left: 200px; /* 사이드바와 메인 컨텐츠 사이의 여백 */
+}
+
+
+
+
+/* footer */
+footer {
+background-color: #f5f5f5;
+color: #333;
+font-family: 'Arial', sans-serif;
+font-size: 14px;
+text-align: center;
+width: 100%;
+background-color: #f5f5f5; /* 푸터 배경색 설정 */
+/* 추가적인 푸터 스타일링 */
+}
+
+
+.footer-logo img {
+width: 50px; /* Adjust as necessary */
+}
+
+.footer-links {
+display: flex;
+gap: 20px;
+justify-content: center;
+padding: 20px 0;
+}
+
+.footer-links a {
+color: #333;
+text-decoration: none;
+transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+text-decoration: underline;
+}
+
+.footer-info p {
+margin: 5px 0;
+}
+
+.footer-copy {
+margin-top: 5px; /* Add space above the copyright text */
+width: 100%;
+}
+
+.footer-top {
+padding-top: 10px;
+}
+
+.footer-top a {
+display: inline-block;
+background-color: #333;
+color: #fff;
+padding: 5px 15px;
+border-radius: 20px;
+text-decoration: none;
+transition: background-color 0.3s ease;
+}
+
+.footer-top a:hover {
+
+background-color: #555;
+}
+
+
+.b-example-divider {
+width: 100%;
+height: 3rem;
+background-color: rgba(0, 0, 0, .1);
+border: solid rgba(0, 0, 0, .15);
+border-width: 1px 0;
+box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
