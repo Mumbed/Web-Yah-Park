@@ -1,0 +1,72 @@
+[
+    {
+      "id": 1,
+      "title": "qna 제목 1",
+      "author": "홍길동",
+      "date": "2023-01-01",
+      "views": 100
+    },
+    {
+      "id": 2,
+      "title": "qna 제목 2",
+      "author": "김철수",
+      "date": "2023-01-02",
+      "views": 32
+    },
+    {
+      "id": 3,
+      "title": "qna 제목 3",
+      "author": "이순신",
+      "date": "2023-01-02",
+      "views": 324
+    },
+    {
+      "id": 4,
+      "title": "qna 제목 4",
+      "author": "장보고",
+      "date": "2023-01-02",
+      "views": 12
+    },
+    {
+      "id": 5,
+      "title": "qna 제목 5",
+      "author": "상상부기",
+      "date": "2023-01-02",
+      "views": 23
+    },
+    {
+      "id": 6,
+      "title": "qna 제목 6",
+      "author": "애용",
+      "date": "2023-01-02",
+      "views": 415
+    },
+    {
+      "id": 7,
+      "title": "qna 제목 7",
+      "author": "구구우",
+      "date": "2023-01-02",
+      "views": 22
+    },
+    {
+      "id": 8,
+      "title": "qna 제목 8",
+      "author": "조나단",
+      "date": "2023-01-10",
+      "views": 22
+    },
+    {
+      "id": 9,
+      "title": "qna 제목 9",
+      "author": "김지훈",
+      "date": "2023-01-9",
+      "views": 22
+    },
+    {
+      "id": 10,
+      "title": "qna 제목 10",
+      "author": "이기혁",
+      "date": "2023-01-1",
+      "views": 22
+    }
+  ]
