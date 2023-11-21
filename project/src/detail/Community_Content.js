@@ -1,14 +1,13 @@
 import React from 'react';
-import './style/Community.css';
+import './style/Community_Content.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
 
 
-
-function Community() {
-  return (
-    <div>
-      <header>
+function Community_Content(){
+    return (
+        <div>
+            <header>
         <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">한성대학교 컴퓨터공학부</Link>
@@ -58,64 +57,42 @@ function Community() {
         </nav>
       </header>
 
-      <div className="board">
-        <div className="sidebar">
-          <ul>
-            <li><Link className="nav-link" to="/Student_notice">학생회 공지사항</Link></li>
-            <li><Link className="nav-link" to="/Community">동아리</Link></li>
-            <li><Link className="nav-link" to="/Somoim">소모임</Link></li>
-          </ul>
-        </div>
-        <div className="main-content">
-
-          
-        
-          <div className="component-container">
-         
-            <div className="dongimg">
-              <img src="original.jpg" alt="로고" className="logo-image" />
-            </div>
-            <Link className="Community_Content" to="/Community_Content">
-            <div className="description">
-              <p>BUG</p>
-              <p>한성대학교 컴퓨터 공학부 동아리 BUG입니다.</p>
-            </div>
-            </Link>
-          </div>
-
-
-          <div className="component-container">
-            <div className="dongimg">
-              <img src="original.jpg" alt="로고" className="logo-image" />
-            </div>
-            <Link className="Community_Content" to="/Community_Content">
-            <div className="description">
-              <p>UMC</p>
-              <p>대학 연합 동아리 UMC 입니다.</p>
-            </div>
-            </Link>
-          </div>
-
-
-          <div className="component-container">
-            <div className="dongimg">
-              <img src="original.jpg" alt="로고" className="logo-image" />
-            </div>
-            <Link className="Community_Content" to="/Community_Content">
-            <div className="description">
-              <p>멋쟁이 사자처럼</p>
-              <p>대학 연합 동아리 멋쟁이 사자처럼! 입니다.</p>
-            </div>
-            </Link>
-          </div>
-
-          
-
-
-        </div>
+      <section className="community-intro">
+  <div className="container">
+    <div className="row align-items-center">
+      <div className="col-lg-6">
+        <img
+          src="original.jpg"
+          alt="동아리 활동 사진"
+          className="Community_Content_Image"
+        />
       </div>
+      <div className="col-lg-6">
+        <h2 className='Community_Content_Name'>BUG</h2>
+        <p>
+        저희 BUG에서 앞으로 활동을 같이 꾸려나갈 신입생분들을 모집합니다!
+        저희 BUG에서는 튜터링, 그룹 스터디, 프로젝트 등의 활동을 하고 있습니다.
+        대부분의 활동은 대면으로 진행할 예정이며 MT, 개강파티, 신년회 등 다양한 친목 활동도 기획중입니다.
+        컴퓨터공학부 학우들뿐만 아니라 IT공과대학, 상상력 인재학부를 지원한 사람이라면 누구나 지원 가능하니 많은 관심 부탁드립니다!
+        
 
-    <footer>
+        </p>
+        <p>
+          동아리에서는 [세부 활동 내용], [모집 기간 및 방법] 등에 대한 정보를 제공하고 있습니다.
+        </p>
+        <p>
+          자세한 내용은 동아리 홈페이지나 직접 문의해주세요.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+     
+
+
+      <footer>
       <div className="footer-container">
         <div className="footer-links">
           <a href="#">| 게시판보기 | </a>
@@ -131,8 +108,8 @@ function Community() {
         </div>
       </div>
     </footer>
-  </div>
-  );
+        </div>
+    );
 }
 
-export default Community;
+export default Community_Content;

@@ -203,6 +203,7 @@ th {
 
 /* 동아리 컴포넌트 컨테이너 스타일 */
 .component-container {
+  margin-top: 100px;
   flex-basis: calc(25% - 40px);
   max-width: calc(25% - 40px);
   box-sizing: border-box;
@@ -213,6 +214,7 @@ th {
   margin-bottom: 20px;
   padding: 10px;
 }
+
 
 /* 동아리 이미지 및 설명 스타일 */
 .dongimg,

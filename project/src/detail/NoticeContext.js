@@ -10,6 +10,7 @@ export const NoticeProvider = ({ children }) => {
       id: 100 - i ,
       title: `공지사항 제목 ${100 - i}`,
       author: faker.name.lastName(), // 성(last name)만 생성
+      password : '1234',
       date: faker.date.past(2).toISOString().split('T')[0],
       views: faker.random.number({ min: 1, max: 1000 }),
       content: faker.lorem.paragraphs(),

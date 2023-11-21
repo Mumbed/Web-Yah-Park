@@ -22,8 +22,12 @@ import NoticeContent from './detail/NoticeContent';
 import QnaContent from './detail/QnaContent';
 
 import Edit from './detail/Edit';
+import EditNotice from './detail/EditNotice';
+
 import NoticeWrite from './detail/NoticeWrite';
 import QnaWrite from './detail/QnaWrite';
+import Community_Content from './detail/Community_Content';
+import Somoim_Content from './detail/Somoim_Content';
 
 import { NoticeProvider } from './detail/NoticeContext'; // NoticeContext를 import합니다.
 import { QnaProvider } from './detail/QnaContext'; // NoticeContext를 import합니다.
@@ -47,7 +51,7 @@ function App() {
               <Route path="/NoticeContent/:id" element={<NoticeContent />} />
               <Route path="/QnaContent/:id" element={<QnaContent />} />
 
-              <Route path="/Edit" element={<Edit />} /> {/* element 속성으로 컴포넌트 지정 */}
+              <Route path="/EditNotice/:id" element={<EditNotice />} />
               <Route path="/Professor" element={<Professor />} /> {/* element 속성으로 컴포넌트 지정 */}
               <Route path="/NoticeWrite" element={<NoticeWrite />} /> {/* element 속성으로 컴포넌트 지정 */}
               <Route path="/QnaWrite" element={<QnaWrite />} /> {/* element 속성으로 컴포넌트 지정 */}
@@ -59,6 +63,11 @@ function App() {
               <Route path="/IntroBig" element={<IntroBig />} /> {/* element 속성으로 컴포넌트 지정 */}
               <Route path="/IntroWeb" element={<IntroWeb />} /> {/* element 속성으로 컴포넌트 지정 */}
               <Route path="/IntroMobile" element={<IntroMobile />} /> {/* element 속성으로 컴포넌트 지정 */}
+
+              <Route path="/Community_Content" element={<Community_Content/>} />
+              <Route path="Somoim_Content" element={<Somoim_Content/>} />
+
+
             </Routes>
           </div>
         </Router>
