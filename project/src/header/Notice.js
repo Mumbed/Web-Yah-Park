@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import faker from 'faker';
-import Content from '../detail/Content'; // Content 컴포넌트를 import
+import Content from '../detail/NoticeContent'; // Content 컴포넌트를 import
+import { NoticeContext } from '../detail/NoticeContext';
 
 import './style/Notice.css'; // CSS 파일을 import 합니다.
 
@@ -10,38 +11,14 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
 
 function Notice() {
-  const newData = [];
-  const [notices, setNotices] = useState(() => {
-    const initialNotices = [];
-    for (let i = 1; i <= 100; i++) {
-      initialNotices.push({
-        id: i,
-        title: `공지사항 제목 ${i}`,
-        author: faker.name.lastName(),
-        date: faker.date.past(1).toISOString().split('T')[0],
-        views: faker.random.number({ min: 1, max: 1000 }),
-        content: faker.lorem.paragraphs(),
-      });
-    }
-    return initialNotices;
-  });
-  for (let i = 1; i <= 100; i++) {
-    const newNotice = {
-      id: i,
-      title: `공지사항 제목 ${i}`,
-      author: faker.name.lastName(),
-      date: faker.date.past(1).toISOString().split('T')[0],
-      views: faker.random.number({ min: 1, max: 1000 }),
-      content: faker.lorem.paragraphs(), // 공지사항 내용을 랜덤으로 생성
-    };
-    newData.push(newNotice);
-  }
+  const { notices } = useContext(NoticeContext); // NoticeContext에서 공지사항 데이터를 가져옵니다.
+
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10; // 페이지당 표시할 아이템 수
 
   // 페이지 번호를 계산합니다.
-  const totalPages = Math.ceil(newData.length / itemsPerPage);
+  const totalPages = Math.ceil(notices.length / itemsPerPage);
 
   // 페이지 변경 함수를 정의합니다.
   const handlePageChange = (newPage) => {
@@ -51,7 +28,7 @@ function Notice() {
   // 공지사항 데이터를 현재 페이지에 맞게 필터링합니다.
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const paginatedNotices = newData.slice(startIndex, endIndex);
+  const paginatedNotices = notices.slice(startIndex, endIndex);
 
   // 'notices' 변수에 데이터를 할당합니다.
 
@@ -128,7 +105,7 @@ function Notice() {
           <div key={notice.id}>
             <div className="num">{notice.id}</div>
             <div className="title">
-              <Link to={`/Content/${notice.id}`}>{notice.title}</Link>
+              <Link to={`/NoticeContent/${notice.id}`}>{notice.title}</Link>
             </div>
             <div className="writer">{notice.author}</div>
             <div className="date">{notice.date}</div>
@@ -154,7 +131,7 @@ function Notice() {
               <a href="#" className="bt last">##</a>
             </div>
             <div class="bt_wrap">
-              <Link className="nav-link" to="/Write">등록</Link>
+              <Link className="nav-link" to="/NoticeWrite">등록</Link>
             </div>
           </div>
         </div>

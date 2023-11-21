@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { NoticeContext } from './NoticeContext';
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
 
-function Content() {
+function NoticeContent() {
   const { id } = useParams();
   const { notices } = useContext(NoticeContext);
   const notice = notices.find(notice => notice.id.toString() === id);
@@ -63,7 +63,7 @@ function Content() {
   </header>
     <div className="board_wrap">
         <div className="board_title">
-          <strong>Q&A 게시판</strong>
+          <strong>공지사항</strong>
         </div>
 
         {notice ? (
@@ -119,4 +119,4 @@ function Content() {
   );
 }
 
-export default Content;
+export default NoticeContent;
