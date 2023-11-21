@@ -1,29 +1,49 @@
 import React, { useState, useContext } from 'react';
-import './style/Qna.css'; // CSS 파일을 import 합니다.
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { QnaContext } from '../detail/QnaContext';
+import { useNavigate } from 'react-router-dom'; // useNavigate를 import
+import { QnaContext } from './QnaContext'; // 경로를 확인해주세요.
 
+import './style/Write.css'; // Import your CSS file here
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
 
-function Qna() {
-  const { qnas } = useContext(QnaContext); // NoticeContext에서 공지사항 데이터를 가져옵니다.
+function Write() {
+    const navigate = useNavigate(); // useNavigate를 사용
+    const { qnas, setQnas } = useContext(QnaContext);
+    const [id, setId] = useState('101');
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10; // 페이지당 표시할 아이템 수
+    const [title, setTitle] = useState('');
+    const [author, setAuthor] = useState('');
+    const [password, setPassword] = useState('');
+    const [content, setContent] = useState('');
+    const handleIdChange = (e) => setId(e.target.value);
 
-  // 페이지 번호를 계산합니다.
-  const totalPages = Math.ceil(qnas.length / itemsPerPage);
+    const handleTitleChange = (e) => setTitle(e.target.value);
+    const handleAuthorChange = (e) => setAuthor(e.target.value);
+    const handlePasswordChange = (e) => setPassword(e.target.value);
+    const handleContentChange = (e) => setContent(e.target.value);
+    const handleRegisterClick = () => {
+      const newId = qnas.length > 0 ? Math.max(...qnas.map(qna => qna.id)) + 1 : 101;
 
-  // 페이지 변경 함수를 정의합니다.
-  const handlePageChange = (newPage) => {
-    setCurrentPage(newPage);
-  };
+      const newQna = {
+        id : newId, 
+        title,
+        author,
+        date: new Date().toLocaleDateString(),
+        views: 0,
+        content,
+      };
+  
+  
+      // Add the new notice to the existing noticedata array
+      setQnas([newQna, ...qnas]);
 
-  // 공지사항 데이터를 현재 페이지에 맞게 필터링합니다.
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const paginatedNotices = qnas.slice(startIndex, endIndex);
+      navigate('/Qna');
+
+  
+      // Optionally, redirect to the notice list page
+      // history.push('/notices');
+    };
+
 
   return (
     <div>
@@ -78,62 +98,89 @@ function Qna() {
         </nav>
       </header>
 
-      <div className="board">
-        <div className="board_wrap">
-          <div className="board_title">
-            <strong>QNA</strong>
-            <p>한성대학교 컴퓨터 공학부에서 궁금한 사항을 대답해드립니다.</p>
-          </div>
-          <div className="board_list_wrap">
-            <div className="board_list">
-              <div className="top">
-                <div className="num">번호</div>
-                <div className="title">제목</div>
-                <div className="writer">글쓴이</div>
-                <div className="date">작성일</div>
-                <div className="count">조회</div>
-              </div>
-
-              {paginatedNotices.map((qna) => (
-          <div key={qna.id}>
-            <div className="num">{qna.id}</div>
-            <div className="title">
-              <Link to={`/QnaContent/${qna.id}`}>{qna.title}</Link>
-            </div>
-            <div className="writer">{qna.author}</div>
-            <div className="date">{qna.date}</div>
-            <div className="count">{qna.views}</div>
-          </div>
-        ))}
-            </div>
-            <div className="board_page">
-              <a href="#" className="bt first"> ## </a>
-              <a href="#" className="bt prev"> # </a>
-              {Array.from({ length: totalPages }, (_, index) => (
-                <a
-                  key={index + 1}
-                  href="#"
-                  className={`num ${currentPage === index + 1 ? 'on' : ''}`}
-                  onClick={() => handlePageChange(index + 1)}
-                >
-                  {index + 1}
-                </a>
-              ))}
-              <a href="#" className="bt next">#</a>
-              <a href="#" className="bt last">##</a>
-            </div>
-            <div class="bt_wrap">
-              <Link className="nav-link" to="/QnaWrite">등록</Link>
-            </div>
-          </div>
+      <div className="board_wrap">
+        <div className="board_title">
+          <strong>Qna 글 등록하기</strong>
+        </div>
+        <div className="board_write_wrap">
+        <div className="board_write">
+  <div className="title">
+    <dl>
+      <dt>제목</dt>
+      <dd>
+        <input
+          type="text"
+          placeholder="제목 입력"
+          value={title}
+          onChange={handleTitleChange}
+        />
+      </dd>
+    </dl>
+  </div>
+  <div className="info">
+    <dl>
+      <dt>글쓴이</dt>
+      <dd>
+        <input
+          type="text"
+          placeholder="글쓴이 입력"
+          value={author}
+          onChange={handleAuthorChange}
+        />
+      </dd>
+    </dl>
+    <dl>
+      <dt>비밀번호</dt>
+      <dd>
+        <input
+          type="password"
+          placeholder="비밀번호 입력"
+          value={password}
+          onChange={handlePasswordChange}
+        />
+      </dd>
+    </dl>
+  </div>
+  <div className="cont">
+    <textarea
+      placeholder="내용 입력"
+      value={content}
+      onChange={handleContentChange}
+    ></textarea>
+  </div>
+</div>
+<div className="bt_wrap">
+  <button onClick={handleRegisterClick} style={{ 
+    display: 'inline-block',
+    minWidth: '80px',
+    marginLeft: '10px',
+    padding: '10px',
+    border: '1px solid #000',
+    borderRadius: '2px',
+    fontSize: '16px', // 폰트 크기를 16px로 변경
+    background: '#000',
+    color: '#fff',
+  }}>등록</button>
+  <Link to="/Qna" style={{
+    display: 'inline-block',
+    minWidth: '80px',
+    padding: '10px',
+    border: '1px solid #000',
+    borderRadius: '2px',
+    fontSize: '16px', // 폰트 크기를 16px로 변경
+    textDecoration: 'none',
+    color: 'inherit'
+  }}>취소</Link>
+</div>
         </div>
       </div>
+
       <footer>
         <div className="footer-container">
           <div className="footer-links">
-            <a href="#">| 게시판보기 |</a>
-            <a href="#">교수소개 사이트 |</a>
-            <a href="#">한성대학교 커리큘럼 |</a>
+            <a href="#">|  게시판보기  | </a>
+            <a href="#">교수소개 사이트    | </a>
+            <a href="#">한성대학교 커리큘럼  |</a>
           </div>
           <div className="footer-info">
             <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
@@ -144,9 +191,8 @@ function Qna() {
           </div>
         </div>
       </footer>
-
     </div>
   );
 }
 
-export default Qna;
+export default Write;
