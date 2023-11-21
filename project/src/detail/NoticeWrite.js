@@ -21,6 +21,7 @@ function Write() {
     const handleAuthorChange = (e) => setAuthor(e.target.value);
     const handlePasswordChange = (e) => setPassword(e.target.value);
     const handleContentChange = (e) => setContent(e.target.value);
+
     const handleRegisterClick = () => {
       const newId = notices.length > 0 ? Math.max(...notices.map(notice => notice.id)) + 1 : 101;
 
@@ -28,6 +29,7 @@ function Write() {
         id : newId, 
         title,
         author,
+        password,
         date: new Date().toLocaleDateString(),
         views: 0,
         content,
@@ -66,7 +68,6 @@ function Write() {
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                     <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
-                    <li><Link className="dropdown-item" to="/Student_Notice">학생회공지</Link></li>
                     <li><Link className="dropdown-item" to="">갤러리</Link></li>
                   </ul>
                 </li>
@@ -80,7 +81,7 @@ function Write() {
                     <li><Link className="dropdown-item" to="/IntroMobile">모바일소프트웨어트랙</Link></li>
                     <li><Link className="dropdown-item" to="/IntroGraphic">디지털컨텐츠 가상현실트랙</Link></li>
                     <li><hr className="dropdown-divider" /></li>
-                    <li><Link className="dropdown-item" to="/Education">교육과정</Link></li>
+                    <li><Link className="dropdown-item" to="/IntroMain">교육과정</Link></li>
                   </ul>
                 </li>
                 <li className="nav-item">

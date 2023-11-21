@@ -1,9 +1,6 @@
 import React from 'react';
 import './style/somoim.css'; // 커스텀 스타일 시트를 import 합니다.
-
 import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS를 import 합니다.
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'; // Routes 추가
 
 function Somoim() {
@@ -28,7 +25,6 @@ function Somoim() {
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                     <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
-                    <li><Link className="dropdown-item" to="/Student_Notice">학생회공지</Link></li>
                     <li><Link className="dropdown-item" to="">갤러리</Link></li>
                   </ul>
                 </li>
@@ -42,7 +38,7 @@ function Somoim() {
                     <li><Link className="dropdown-item" to="/IntroMobile">모바일소프트웨어트랙</Link></li>
                     <li><Link className="dropdown-item" to="/IntroGraphic">디지털컨텐츠 가상현실트랙</Link></li>
                     <li><hr className="dropdown-divider" /></li>
-                    <li><Link className="dropdown-item" to="/Education">교육과정</Link></li>
+                    <li><Link className="dropdown-item" to="/IntroMain">교육과정</Link></li>
                   </ul>
                 </li>
                 <li className="nav-item">
@@ -59,7 +55,7 @@ function Somoim() {
           </div>
         </nav>
       </header>
-
+      
       <div className="board">
         <div className="sidebar">
           <ul>
@@ -69,44 +65,52 @@ function Somoim() {
             {/* More categories */}
           </ul>
         </div>
-
+        
         <div className="main-content">
+
           <div className="component-container">
             <div className="dongimg">
               <img src="original.jpg" alt="로고" className="logo-image" />
             </div>
+            <Link className="Somoim_Content" to="/Somoim_Content">
             <div className="description">
-              <p>소모임</p>
-              <p>안녕하세요 세상의 bug는 저희가 다 잡아버리겠습니다.</p>
+              <p>POCS</p>
+              <p>한성대학교 컴퓨터 공학부 학술 소모임 POCS 입니다.</p>
             </div>
+            </Link>
           </div>
+          
+          
+
           <div className="component-container">
             <div className="dongimg">
               <img src="original.jpg" alt="로고" className="logo-image" />
             </div>
+            <Link className="Somoim_Content" to="/Somoim_Content">
             <div className="description">
-              <p>SWAG</p>
-              <p>안녕하세요 칸예 웨스트입니다.</p>
+              <p>TEAM_ODD</p>
+              <p>한성대학교 컴퓨터 공학부 학술 소모임 TEAM_ODD입니다.</p>
             </div>
+            </Link>
           </div>
+
           <div className="component-container">
             <div className="dongimg">
               <img src="original.jpg" alt="로고" className="logo-image" />
             </div>
+            <Link className="Somoim_Content" to="/Somoim_Content">
             <div className="description">
-              <p>검찰</p>
-              <p>LG 승부조작 우승 사건 제대로 수사해서 국민 앞에서 제대로 심판하겠습니다.</p>
+              <p>DGM</p>
+              <p>한성대학교 컴퓨터 공학부 학술 소모임 DGM입니다.</p>
             </div>
+            </Link>
           </div>
-          <div className="component-container">
-            <div className="dongimg">
-              <img src="original.jpg" alt="로고" className="logo-image" />
-            </div>
-            <div className="description">
-              <p>박승현</p>
-              <p>안녕하세요 여러분 break-point 찍어보면서 제대로 리액트 공부해 봅시다!</p>
-            </div>
-          </div>
+
+
+    
+
+
+
         </div>
       </div>
 

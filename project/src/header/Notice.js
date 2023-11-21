@@ -11,7 +11,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
 
 function Notice() {
-  const { notices } = useContext(NoticeContext); // NoticeContext에서 공지사항 데이터를 가져옵니다.
+  const { notices, setNotices } = useContext(NoticeContext);
 
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -24,7 +24,11 @@ function Notice() {
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
-
+  const incrementViewCount = (id) => {
+    setNotices(notices.map((notice) =>
+      notice.id === id ? { ...notice, views: notice.views + 1 } : notice
+    ));
+  };
   // 공지사항 데이터를 현재 페이지에 맞게 필터링합니다.
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -53,7 +57,6 @@ function Notice() {
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                     <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
-                    <li><Link className="dropdown-item" to="/Student_Notice">학생회공지</Link></li>
                     <li><Link className="dropdown-item" to="">갤러리</Link></li>
                   </ul>
                 </li>
@@ -67,7 +70,7 @@ function Notice() {
                     <li><Link className="dropdown-item" to="/IntroMobile">모바일소프트웨어트랙</Link></li>
                     <li><Link className="dropdown-item" to="/IntroGraphic">디지털컨텐츠 가상현실트랙</Link></li>
                     <li><hr className="dropdown-divider" /></li>
-                    <li><Link className="dropdown-item" to="/Education">교육과정</Link></li>
+                    <li><Link className="dropdown-item" to="/IntroMain">교육과정</Link></li>
                   </ul>
                 </li>
                 <li className="nav-item">
@@ -102,16 +105,21 @@ function Notice() {
               </div>
 
               {paginatedNotices.map((notice) => (
-          <div key={notice.id}>
-            <div className="num">{notice.id}</div>
-            <div className="title">
-              <Link to={`/NoticeContent/${notice.id}`}>{notice.title}</Link>
-            </div>
-            <div className="writer">{notice.author}</div>
-            <div className="date">{notice.date}</div>
-            <div className="count">{notice.views}</div>
-          </div>
-        ))}
+                <div key={notice.id}>
+                  <div className="num">{notice.id}</div>
+                  <div className="title">
+                    <Link
+                      to={`/NoticeContent/${notice.id}`}
+                      onClick={() => incrementViewCount(notice.id)}
+                    >
+                      {notice.title}
+                    </Link>
+                  </div>
+                  <div className="writer">{notice.author}</div>
+                  <div className="date">{notice.date}</div>
+                  <div className="count">{notice.views}</div>
+                </div>
+              ))}
             </div>
 
             <div className="board_page">
