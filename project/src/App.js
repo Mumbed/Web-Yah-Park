@@ -21,7 +21,6 @@ import Somoim from './sidebar/Somoim';
 import NoticeContent from './detail/NoticeContent';
 import QnaContent from './detail/QnaContent';
 
-import Edit from './detail/Edit';
 import EditNotice from './detail/EditNotice';
 import EditQna from './detail/EditQna';
 
@@ -71,9 +70,8 @@ function App() {
               <Route path="/IntroWeb" element={<IntroWeb />} /> {/* element 속성으로 컴포넌트 지정 */}
               <Route path="/IntroMobile" element={<IntroMobile />} /> {/* element 속성으로 컴포넌트 지정 */}
 
-              <Route path="/Community_Content" element={<Community_Content/>} />
-              <Route path="Somoim_Content" element={<Somoim_Content/>} />
-
+              <Route path="/Community_Content/:id" element={<Community_Content />} />
+              <Route path="/Somoim_Content/:id" element={<Somoim_Content/>} />
 
             </Routes>
           </div>

@@ -1,11 +1,11 @@
 import React from 'react';
-import './style/Community.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
+import './style/Community.css'; // 커스텀 스타일 시트를 import 합니다.
+import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS를 import 합니다.
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'; // Routes 추가
+import data from '../somoim.json'
+import Sidebar from '../Sidebar'; // Sidebar 컴포넌트를 올바른 경로로 불러옵니다.
 
-
-
-function Community() {
+function Somoim() {
   return (
     <div>
       <header>
@@ -57,82 +57,54 @@ function Community() {
           </div>
         </nav>
       </header>
-
+      <div className='sidebar'>
+        <Sidebar />
+      </div>
       <div className="board">
-        <div className="sidebar">
-          <ul>
-            <li><Link className="nav-link" to="/Student_notice">학생회 공지사항</Link></li>
-            <li><Link className="nav-link" to="/Community">동아리</Link></li>
-            <li><Link className="nav-link" to="/Somoim">소모임</Link></li>
-          </ul>
-        </div>
-        <div className="main-content">
 
-          
-        
-          <div className="component-container">
-         
-            <div className="dongimg">
-              <img src="original.jpg" alt="로고" className="logo-image" />
-            </div>
-            <Link className="Community_Content" to="/Community_Content">
-            <div className="description">
-              <p>BUG</p>
-              <p>한성대학교 컴퓨터 공학부 동아리 BUG입니다.</p>
-            </div>
-            </Link>
+        <div className="main-contents">
+
+          <div className="circle-container">
+
+            {data.somoims.map((somoim) => (
+              <div className="circle" key={somoim.id}>
+                <div className="circle-content">
+                  <img src={somoim.image} alt={`${somoim.name} 로고`} className="circle-logo" />
+                  <div className="circle-info">
+                    <h3>{somoim.name}</h3>
+                    <p>{somoim.description}</p>
+                    <Link to={`/Somoim_Content/${somoim.id}`} className="btn btn-primary">
+                      더 알아보기
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+
           </div>
-
-
-          <div className="component-container">
-            <div className="dongimg">
-              <img src="original.jpg" alt="로고" className="logo-image" />
-            </div>
-            <Link className="Community_Content" to="/Community_Content">
-            <div className="description">
-              <p>UMC</p>
-              <p>대학 연합 동아리 UMC 입니다.</p>
-            </div>
-            </Link>
-          </div>
-
-
-          <div className="component-container">
-            <div className="dongimg">
-              <img src="original.jpg" alt="로고" className="logo-image" />
-            </div>
-            <Link className="Community_Content" to="/Community_Content">
-            <div className="description">
-              <p>멋쟁이 사자처럼</p>
-              <p>대학 연합 동아리 멋쟁이 사자처럼! 입니다.</p>
-            </div>
-            </Link>
-          </div>
-
-          
 
 
         </div>
       </div>
 
-    <footer>
-      <div className="footer-container">
-        <div className="footer-links">
-          <a href="#">| 게시판보기 | </a>
-          <a href="#">교수소개 사이트 | </a>
-          <a href="#">한성대학교 커리큘럼 |</a>
+      <footer>
+        <div className="footer-container">
+          <div className="footer-links">
+            <a href="#">| 게시판보기 |</a>
+            <a href="#">교수소개 사이트 |</a>
+            <a href="#">한성대학교 커리큘럼 |</a>
+          </div>
+          <div className="footer-info">
+            <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
+            <p>대표 02-760-4114 입학 02-760-5800</p>
+          </div>
+          <div className="footer-copy">
+            <p>COPYRIGHT(c) HANSUNGUNIVERSITY. ALL RIGHTS RESERVED.</p>
+          </div>
         </div>
-        <div className="footer-info">
-          <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
-          <p>대표 02-760-4114 입학 02-760-5800</p>
-        </div>
-        <div className="footer-copy">
-          <p>COPYRIGHT(c) HANSUNGUNIVERSITY. ALL RIGHTS RESERVED.</p>
-        </div>
-      </div>
-    </footer>
-  </div>
+      </footer>
+    </div>
   );
 }
 
-export default Community;
+export default Somoim;

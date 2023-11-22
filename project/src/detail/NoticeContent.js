@@ -86,6 +86,10 @@ function NoticeContent() {
                   <dt>조회</dt>
                   <dd>{notice.views}</dd>
                 </dl>
+                <dl>
+                  <dt>카테고리</dt>
+                  <dd>{notice.category}</dd>
+                </dl>
               </div>
               <div className="cont">{notice.content}</div>
             </div>

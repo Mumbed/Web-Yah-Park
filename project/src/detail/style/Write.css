@@ -1,14 +1,5 @@
-/* 공통 스타일 */
-body, html {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    flex-direction: column;
-  }
   
-  .board_wrap {
+  .board_wrapping {
     width: 1000px;
     margin: 100px auto;
     font-size: 16px; /* 폰트 크기를 16px로 변경 */
@@ -53,60 +44,65 @@ body, html {
     font-size: 16px; /* 폰트 크기를 16px로 변경 */
   }
   
-  .board_list {
+  .board_lists {
     width: 100%;
     border-top: 2px solid #000;
   }
   
-  .board_list > div {
+  .board_lists > div {
     border-bottom: 1px solid #ddd;
     font-size: 0;
   }
   
-  .board_list > div.top {
+  .board_lists > div.top {
     border-bottom: 1px solid #999;
   }
   
-  .board_list > div:last-child {
+  .board_lists > div:last-child {
     border-bottom: 1px solid #000;
   }
   
-  .board_list > div > div {
+  .board_lists > div > div {
     display: inline-block;
     padding: 15px 0;
     text-align: center;
     font-size: 16px; /* 폰트 크기를 16px로 변경 */
   }
   
-  .board_list > div.top > div {
+  .board_lists > div.top > div {
     font-weight: 600;
   }
   
-  .board_list .num {
+  .board_lists .nums {
     width: 10%;
   }
   
-  .board_list .title {
-    width: 60%;
-    text-align: left;
+  .board_lists .titles {
+    width: 50%;
+  }
+  .board_lists .titles {
+    width: 50%;
   }
   
-  .board_list .top .title {
-    text-align: center;
-  }
-  
-  .board_list .writer {
+  .board_lists .writers {
     width: 10%;
   }
   
-  .board_list .date {
+  .board_lists .dates {
     width: 10%;
   }
   
-  .board_list .count {
+  .board_lists .counts {
     width: 10%;
   }
   
+  .board_lists .category {
+    width: 10%;
+  }
+  
+
+
+
   .board_page {
     margin-top: 30px;
     text-align: center;

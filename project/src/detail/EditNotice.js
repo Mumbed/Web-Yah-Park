@@ -14,7 +14,8 @@ function EditNotice() {
     const [content, setContent] = useState(noticeToEdit?.content || '');
     const [password, setPassword] = useState(''); // 비밀번호 입력 상태 추가
     const [editPassword, setEditPassword] = useState(''); // 사용자가 입력하는 비밀번호 상태 추가
-  
+    const [category, setCategory] = useState(noticeToEdit?.category || '중요');
+
     useEffect(() => {
         if (!noticeToEdit) navigate('/Notice'); // If no notice is found, redirect to notices page
     }, [noticeToEdit, navigate]);
@@ -22,16 +23,19 @@ function EditNotice() {
     const handleSave = () => {
         if (noticeToEdit.password === editPassword) { // Check if the entered password matches the original one
             const updatedNotices = notices.map((notice) =>
-              notice.id.toString() === id
-                ? { ...notice, title, author, content }
+                notice.id.toString() === id
+                ? { ...notice, title, author, content, category } // category를 업데이트
                 : notice
             );
-        setNotices(updatedNotices);
-        navigate('/Notice');
+            setNotices(updatedNotices);
+            navigate('/Notice');
         }
         else {
             alert('비밀번호가 일치하지 않습니다.'); // 일치하지 않으면 경고 메시지 표시
-          }
+        }
+    };
+    const handleCategoryChange = (e) => {
+        setCategory(e.target.value);
     };
 
     return (
@@ -104,21 +108,32 @@ function EditNotice() {
                                 <dt>글쓴이</dt>
                                 <dd><input type="text" placeholder="글쓴이 입력" value={author} onChange={(e) => setAuthor(e.target.value)} /></dd>
                             </dl>
+                            <dl>
+                                <dt>카테고리</dt>
+                                <dd>
+                                    <select value={category} onChange={handleCategoryChange}>
+                                        <option value="중요">중요</option>
+                                        <option value="취업">취업</option>
+                                        <option value="비교과">비교과</option>
+                                        <option value="캡스톤">캡스톤</option>
+                                    </select>
+                                </dd>
+                            </dl>
                         </div>
                         <div className="cont">
                             <textarea placeholder="내용 입력" value={content} onChange={(e) => setContent(e.target.value)}></textarea>
                         </div>
                         <dl>
-          <dt>비밀번호</dt>
-          <dd>
-            <input
-              type="password"
-              placeholder="비밀번호 입력"
-              value={editPassword}
-              onChange={(e) => setEditPassword(e.target.value)}
-            />
-          </dd>
-        </dl>
+                            <dt>비밀번호</dt>
+                            <dd>
+                                <input
+                                    type="password"
+                                    placeholder="비밀번호 입력"
+                                    value={editPassword}
+                                    onChange={(e) => setEditPassword(e.target.value)}
+                                />
+                            </dd>
+                        </dl>
                     </div>
                     <div className="bt_wrap">
                         <button onClick={handleSave} style={{

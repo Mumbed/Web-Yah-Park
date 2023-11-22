@@ -15,6 +15,7 @@ function Notice() {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태를 추가
   const [filteredNotices, setFilteredNotices] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(''); // 선택된 카테고리 상태 추가
 
   const itemsPerPage = 10; // 페이지당 표시할 아이템 수
 
@@ -40,7 +41,9 @@ function Notice() {
   const handleSearchInputChange = (e) => {
     setSearchTerm(e.target.value);
   };
-
+  const handleCategoryChange = (e) => {
+    setSelectedCategory(e.target.value);
+  };
   const handleSearch = () => {
     // 검색어를 이용하여 공지사항을 필터링합니다.
     const filteredNotices = notices.filter((notice) => {
@@ -48,14 +51,17 @@ function Notice() {
       const title = notice.title.toLowerCase();
       const author = notice.author.toLowerCase();
       const content = notice.content.toLowerCase();
-      const searchTermLower = searchTerm.toLowerCase();
+      const category = notice.category.toLowerCase(); // 카테고리 정보를 소문자로 비교
 
-      // 제목, 글쓴이, 내용 중에서 검색어를 포함하는 공지사항을 찾습니다.
-      return (
-        title.includes(searchTermLower) ||
-        author.includes(searchTermLower) ||
-        content.includes(searchTermLower)
-      );
+      const searchTermLower = searchTerm.toLowerCase();
+    const categoryLower = selectedCategory.toLowerCase(); // 선택된 카테고리도 소문자로 변환
+
+    return (
+      (title.includes(searchTermLower) || 
+      author.includes(searchTermLower) || 
+      content.includes(searchTermLower)) ||
+      category.includes(searchTermLower) // 선택된 카테고리와 비교
+    );
     });
 
     // 필터링된 공지사항을 설정합니다.
@@ -63,6 +69,8 @@ function Notice() {
     // 검색이 발생하면 페이지를 1로 초기화합니다.
     setCurrentPage(1);
   };
+
+  
   return (
     <div>
       <header>
@@ -116,7 +124,7 @@ function Notice() {
       </header>
 
       <div className="board">
-        <div className="board_wrap">
+        <div className="board_wrapping">
           <div className="board_title">
             <strong>공지사항</strong>
             <p>한성대학교 컴퓨터 공학부에서 중요한 정보들을 공지해드립니다.</p>
@@ -132,6 +140,7 @@ function Notice() {
                         <option label="제목" value="title">제목</option>
                         <option label="작성자" value="author">작성자</option>
                         <option label="내용" value="content">내용</option>
+                        <option label="분류" value="category">분류</option>
                       </select>
                       <input
                         type="text"
@@ -152,20 +161,21 @@ function Notice() {
             </div>
           </section>
           <div className="board_list_wrap">
-            <div className="board_list">
-              <div className="top">
-                <div className="num">번호</div>
-                <div className="title">제목</div>
-                <div className="writer">글쓴이</div>
-                <div className="date">작성일</div>
-                <div className="count">조회</div>
+          <div className="board_lists">
+              <div className="tops">
+                <div className="nums">번호</div>
+                <div className="titles">제목</div>
+                <div className="writers">글쓴이</div>
+                <div className="dates">작성일</div>
+                <div className="counts">조회</div>
+                <div className="category">분류</div>
               </div>
 
               {searchTerm === '' ? ( // 검색어가 없는 경우 전체 공지사항을 출력
                 paginatedNotices.map((notice) => (
                   <div key={notice.id}>
-                    <div className="num">{notice.id}</div>
-                    <div className="title">
+                    <div className="nums">{notice.id}</div>
+                    <div className="titles">
                       <Link
                         to={`/NoticeContent/${notice.id}`}
                         onClick={() => incrementViewCount(notice.id)}
@@ -173,17 +183,19 @@ function Notice() {
                         {notice.title}
                       </Link>
                     </div>
-                    <div className="writer">{notice.author}</div>
-                    <div className="date">{notice.date}</div>
-                    <div className="count">{notice.views}</div>
+                    <div className="writers">{notice.author}</div>
+                    <div className="dates">{notice.date}</div>
+                    <div className="counts">{notice.views}</div>
+                    <div className="categorys">{notice.category}</div> {/* 카테고리 정보 표시 */}
+
                   </div>
                 ))
               ) : (
                 filteredNotices.length > 0 ? ( // 검색어가 있고 검색 결과가 있는 경우 검색 결과를 출력
                   filteredNotices.map((notice) => (
                     <div key={notice.id}>
-                      <div className="num">{notice.id}</div>
-                      <div className="title">
+                      <div className="nums">{notice.id}</div>
+                      <div className="titles">
                         <Link
                           to={`/NoticeContent/${notice.id}`}
                           onClick={() => incrementViewCount(notice.id)}
@@ -191,9 +203,11 @@ function Notice() {
                           {notice.title}
                         </Link>
                       </div>
-                      <div className="writer">{notice.author}</div>
-                      <div className="date">{notice.date}</div>
-                      <div className="count">{notice.views}</div>
+                      <div className="writers">{notice.author}</div>
+                      <div className="dates">{notice.date}</div>
+                      <div className="counts">{notice.views}</div>
+                      <div className="category">{notice.category}</div> {/* 카테고리 정보 표시 */}
+
                     </div>
                   ))
                 ) : ( // 검색어가 있지만 검색 결과가 없는 경우 메시지 출력

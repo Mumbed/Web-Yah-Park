@@ -61,18 +61,9 @@ function Professor() {
             </header>
 
             <div class="board">
-                <div class="sidebar">
-                    <ul>
-                        <li><a href="hewgong.html">학생회 공지사항</a></li>
-                        <li><a href="test.html">동아리</a></li>
-                        <li><a href="somoim.html">소모임</a></li>
-                    </ul>
-                </div>
-
-                <div class="main-content">
-
+                <div class="main-pro">
                     <div class="between">
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/GyeHeewon.png" alt="로고" class="logo-image" />
                             </div>
@@ -85,7 +76,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/HanKiJoon.jpg" alt="로고" class="logo-image" />
                             </div>
@@ -98,7 +89,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/HeoJunYoung.jpg" alt="로고" class="logo-image" />
                             </div>
@@ -111,7 +102,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/HwangHoYoung.png" alt="로고" class="logo-image" />
                             </div>
@@ -124,7 +115,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/HwangKiTae.gif" alt="로고" class="logo-image" />
                             </div>
@@ -137,7 +128,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/JangJaeYoung.jpg" alt="로고" class="logo-image" />
                             </div>
@@ -150,7 +141,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/JoSeHong.png" alt="로고" class="logo-image" />
                             </div>
@@ -163,7 +154,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/JungInHwan.jpg" alt="로고" class="logo-image" />
                             </div>
@@ -176,7 +167,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/JungInSang.gif" alt="로고" class="logo-image" />
                             </div>
@@ -189,7 +180,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/kangheejoong.gif" alt="로고" class="logo-image" />
                             </div>
@@ -202,7 +193,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/KimHero.jpg" alt="로고" class="logo-image" />
                             </div>
@@ -215,7 +206,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/KimJinHwan.png" alt="로고" class="logo-image" />
                             </div>
@@ -228,7 +219,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/KimJinMo.jpeg" alt="로고" class="logo-image" />
                             </div>
@@ -241,7 +232,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/KimNamYoon.jpg" alt="로고" class="logo-image" />
                             </div>
@@ -255,7 +246,7 @@ function Professor() {
                         </div>
 
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/KimSungDong.jpg" alt="로고" class="logo-image" />
                             </div>
@@ -268,7 +259,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/KwonYoungMi.png" alt="로고" class="logo-image" />
                             </div>
@@ -281,7 +272,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/LeeHangChan.png" alt="로고" class="logo-image" />
                             </div>
@@ -294,7 +285,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/LeeJaemoon.png" alt="로고" class="logo-image" />
                             </div>
@@ -309,7 +300,7 @@ function Professor() {
                         </div>
 
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/Leejieun.jpg" alt="로고" class="logo-image" />
                             </div>
@@ -322,7 +313,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/LeeSuckki.jpg" alt="로고" class="logo-image" />
                             </div>
@@ -335,7 +326,7 @@ function Professor() {
                             </div>
                         </div>
 
-                        <div class="component-container">
+                        <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/Um.png" alt="로고" class="logo-image" />
                             </div>
