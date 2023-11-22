@@ -2,12 +2,13 @@ import React from 'react';
 import './style/somoim.css'; // 커스텀 스타일 시트를 import 합니다.
 import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS를 import 합니다.
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'; // Routes 추가
-
+import data from '../somoim.json'
+import Sidebar from '../Sidebar'; // Sidebar 컴포넌트를 올바른 경로로 불러옵니다.
 function Somoim() {
   return (
     <div>
       <header>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">한성대학교 컴퓨터공학부</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,17 +20,18 @@ function Somoim() {
                   <Link className="nav-link" to="/Notice">공지사항</Link>
                 </li>
                 <li className="nav-item dropdown">
-                  <Link className="nav-link dropdown-toggle" to="/Community" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <Link className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     커뮤니티
                   </Link>
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                     <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
+                    <li><Link className="dropdown-item" to="/Student_Notice">학생회공지</Link></li>
                     <li><Link className="dropdown-item" to="">갤러리</Link></li>
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
-                  <Link className="nav-link dropdown-toggle" to="/IntroMain" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <Link className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     학부소개
                   </Link>
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -55,60 +57,31 @@ function Somoim() {
           </div>
         </nav>
       </header>
-      
+
+      <div className='sidebar'>
+        <Sidebar />
+      </div>
       <div className="board">
-        <div className="sidebar">
-          <ul>
-            <li><a href="hewgong.html">학생회 공지사항</a></li>
-            <li><Link className="nav-link" to="/Community">동아리</Link></li>
-            <li><Link className="nav-link" to="/Somoim">소모임</Link></li>
-            {/* More categories */}
-          </ul>
-        </div>
-        
-        <div className="main-content">
 
-          <div className="component-container">
-            <div className="dongimg">
-              <img src="original.jpg" alt="로고" className="logo-image" />
-            </div>
-            <Link className="Somoim_Content" to="/Somoim_Content">
-            <div className="description">
-              <p>POCS</p>
-              <p>한성대학교 컴퓨터 공학부 학술 소모임 POCS 입니다.</p>
-            </div>
-            </Link>
+        <div className="main-contents">
+          <div className="circle-container">
+
+            {data.somoims.map((somoim) => (
+              <div className="circle" key={somoim.id}>
+                <div className="circle-content">
+                  <img src={somoim.image} alt={`${somoim.name} 로고`} className="circle-logo" />
+                  <div className="circle-info">
+                    <h3>{somoim.name}</h3>
+                    <p>{somoim.description}</p>
+                    <Link to={`/Somoim_Content/${somoim.id}`} className="btn btn-primary">
+                      더 알아보기
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+
           </div>
-          
-          
-
-          <div className="component-container">
-            <div className="dongimg">
-              <img src="original.jpg" alt="로고" className="logo-image" />
-            </div>
-            <Link className="Somoim_Content" to="/Somoim_Content">
-            <div className="description">
-              <p>TEAM_ODD</p>
-              <p>한성대학교 컴퓨터 공학부 학술 소모임 TEAM_ODD입니다.</p>
-            </div>
-            </Link>
-          </div>
-
-          <div className="component-container">
-            <div className="dongimg">
-              <img src="original.jpg" alt="로고" className="logo-image" />
-            </div>
-            <Link className="Somoim_Content" to="/Somoim_Content">
-            <div className="description">
-              <p>DGM</p>
-              <p>한성대학교 컴퓨터 공학부 학술 소모임 DGM입니다.</p>
-            </div>
-            </Link>
-          </div>
-
-
-    
-
 
 
         </div>
@@ -116,9 +89,7 @@ function Somoim() {
 
       <footer>
         <div className="footer-container">
-          {/* <div className="footer-logo">
-            <img src="hansung.png" alt="Logo">
-          </div> */}
+
           <div className="footer-links">
             <a href="#">| 게시판보기 |</a>
             <a href="#">교수소개 사이트 |</a>
@@ -134,6 +105,7 @@ function Somoim() {
         </div>
       </footer>
     </div>
+
   );
 }
 
