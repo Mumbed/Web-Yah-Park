@@ -12,30 +12,57 @@ import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function Notice() {
   const { notices, setNotices } = useContext(NoticeContext);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태를 추가
+  const [filteredNotices, setFilteredNotices] = useState([]);
 
-
-  const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10; // 페이지당 표시할 아이템 수
 
   // 페이지 번호를 계산합니다.
-  const totalPages = Math.ceil(notices.length / itemsPerPage);
+  const totalPages = Math.ceil((searchTerm === '' ? notices : filteredNotices).length / itemsPerPage) || 1;
 
   // 페이지 변경 함수를 정의합니다.
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
+
+  // 필터링된 공지사항을 현재 페이지에 맞게 슬라이스합니다.
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const paginatedNotices = (searchTerm === '' ? notices : filteredNotices).slice(startIndex, endIndex);
+
   const incrementViewCount = (id) => {
     setNotices(notices.map((notice) =>
       notice.id === id ? { ...notice, views: notice.views + 1 } : notice
     ));
   };
-  // 공지사항 데이터를 현재 페이지에 맞게 필터링합니다.
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const paginatedNotices = notices.slice(startIndex, endIndex);
 
-  // 'notices' 변수에 데이터를 할당합니다.
+  const handleSearchInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
+  const handleSearch = () => {
+    // 검색어를 이용하여 공지사항을 필터링합니다.
+    const filteredNotices = notices.filter((notice) => {
+      // 검색어를 대소문자 구분 없이 비교합니다.
+      const title = notice.title.toLowerCase();
+      const author = notice.author.toLowerCase();
+      const content = notice.content.toLowerCase();
+      const searchTermLower = searchTerm.toLowerCase();
+
+      // 제목, 글쓴이, 내용 중에서 검색어를 포함하는 공지사항을 찾습니다.
+      return (
+        title.includes(searchTermLower) ||
+        author.includes(searchTermLower) ||
+        content.includes(searchTermLower)
+      );
+    });
+
+    // 필터링된 공지사항을 설정합니다.
+    setFilteredNotices(filteredNotices);
+    // 검색이 발생하면 페이지를 1로 초기화합니다.
+    setCurrentPage(1);
+  };
   return (
     <div>
       <header>
@@ -94,6 +121,36 @@ function Notice() {
             <strong>공지사항</strong>
             <p>한성대학교 컴퓨터 공학부에서 중요한 정보들을 공지해드립니다.</p>
           </div>
+          <section className="search-form-container">
+            <div className="board-search">
+              <div className="form-search">
+                <fieldset>
+                  <legend className="hidden">게시물 검색</legend>
+                  <div className="tbl-search">
+                    <div className="search-input">
+                      <select id="srchColumn" name="srchColumn" title="게시판검색">
+                        <option label="제목" value="title">제목</option>
+                        <option label="작성자" value="author">작성자</option>
+                        <option label="내용" value="content">내용</option>
+                      </select>
+                      <input
+                        type="text"
+                        id="srchWrd"
+                        name="srchWrd"
+                        value={searchTerm}
+                        title="검색내용"
+                        onChange={handleSearchInputChange}
+                        placeholder="검색어를 입력하세요" // 검색어 입력 플레이스홀더 추가
+                      />
+                      <button type="button" onClick={handleSearch}>
+                        검색
+                      </button>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </section>
           <div className="board_list_wrap">
             <div className="board_list">
               <div className="top">
@@ -104,46 +161,77 @@ function Notice() {
                 <div className="count">조회</div>
               </div>
 
-              {paginatedNotices.map((notice) => (
-                <div key={notice.id}>
-                  <div className="num">{notice.id}</div>
-                  <div className="title">
-                    <Link
-                      to={`/NoticeContent/${notice.id}`}
-                      onClick={() => incrementViewCount(notice.id)}
-                    >
-                      {notice.title}
-                    </Link>
+              {searchTerm === '' ? ( // 검색어가 없는 경우 전체 공지사항을 출력
+                paginatedNotices.map((notice) => (
+                  <div key={notice.id}>
+                    <div className="num">{notice.id}</div>
+                    <div className="title">
+                      <Link
+                        to={`/NoticeContent/${notice.id}`}
+                        onClick={() => incrementViewCount(notice.id)}
+                      >
+                        {notice.title}
+                      </Link>
+                    </div>
+                    <div className="writer">{notice.author}</div>
+                    <div className="date">{notice.date}</div>
+                    <div className="count">{notice.views}</div>
                   </div>
-                  <div className="writer">{notice.author}</div>
-                  <div className="date">{notice.date}</div>
-                  <div className="count">{notice.views}</div>
-                </div>
-              ))}
+                ))
+              ) : (
+                filteredNotices.length > 0 ? ( // 검색어가 있고 검색 결과가 있는 경우 검색 결과를 출력
+                  filteredNotices.map((notice) => (
+                    <div key={notice.id}>
+                      <div className="num">{notice.id}</div>
+                      <div className="title">
+                        <Link
+                          to={`/NoticeContent/${notice.id}`}
+                          onClick={() => incrementViewCount(notice.id)}
+                        >
+                          {notice.title}
+                        </Link>
+                      </div>
+                      <div className="writer">{notice.author}</div>
+                      <div className="date">{notice.date}</div>
+                      <div className="count">{notice.views}</div>
+                    </div>
+                  ))
+                ) : ( // 검색어가 있지만 검색 결과가 없는 경우 메시지 출력
+                  <p>검색 결과가 없습니다.</p>
+                )
+              )}
             </div>
 
             <div className="board_page">
-              <a href="#" className="bt first"> ## </a>
-              <a href="#" className="bt prev"> # </a>
-              {Array.from({ length: totalPages }, (_, index) => (
-                <a
-                  key={index + 1}
-                  href="#"
-                  className={`num ${currentPage === index + 1 ? 'on' : ''}`}
-                  onClick={() => handlePageChange(index + 1)}
-                >
-                  {index + 1}
-                </a>
-              ))}
-              <a href="#" className="bt next">#</a>
-              <a href="#" className="bt last">##</a>
+              <Link to="#" className="bt first" onClick={() => handlePageChange(1)}> &lt;&lt; </Link>
+              <Link to="#" className="bt prev" onClick={() => handlePageChange(currentPage - 1)}> &lt; </Link>
+              {searchTerm === '' ? (
+                Array.from({ length: totalPages }, (_, index) => (
+                  <Link
+                    key={index + 1}
+                    to="#"
+                    className={`num ${currentPage === index + 1 ? 'on' : ''}`}
+                    onClick={() => handlePageChange(index + 1)}
+                  >
+                    {index + 1}
+                  </Link>
+                ))
+              ) : (
+                <Link to="#" className="num on">
+                  {1}
+                </Link>
+              )}
+              <Link to="#" className="bt next" onClick={() => handlePageChange(currentPage + 1)}> &gt; </Link>
+              <Link to="#" className="bt last" onClick={() => handlePageChange(totalPages)}> &gt;&gt; </Link>
             </div>
+
             <div class="bt_wrap">
               <Link className="nav-link" to="/NoticeWrite">등록</Link>
             </div>
           </div>
         </div>
       </div>
+
       <footer>
         <div className="footer-container">
           <div className="footer-links">

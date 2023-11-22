@@ -4,129 +4,6 @@
     font-weight: normal;
     font-style: normal;
 }
-/* 공통 스타일 */
-body, html {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Header and Navigation Styles */
-header {
-    width: 100%;
-    background-color: #f5f5f5; /* 헤더 배경색 설정 */
-    /* 추가적인 헤더 스타일링 */
-}
-
-.nav-container {
-    width: 100%;
-    height: 100%;
-    padding: 30px;
-    position: relative;
-}
-
-.nav-inner {
-    width: 95%; /* 변경 */
-    position: relative;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-}
-
-.department-name, .menu-item, .account-action {
-    color: #36384E;
-    font-family: Poppins;
-    font-weight: 500;
-    line-height: 20px;
-    word-wrap: break-word;
-}
-
-.department-name {
-    font-size: 24px;
-    font-weight: 700;
-    margin-right: 20px; /* 간격 추가 */
-}
-
-.menu-container {
-    justify-content: flex-start;
-    align-items: center;
-    display: flex;
-}
-
-.menu-item {
-    font-size: 16px;
-    margin-right: 20px; /* 간격 추가 */
-}
-
-.account-container {
-    justify-content: flex-start;
-    align-items: center;
-    display: flex;
-}
-
-.account-action {
-    font-size: 16px;
-    font-weight: 600;
-    margin-right: 20px; /* 간격 추가 */
-}
-
-.signup-button {
-    width: 117px;
-    height: 42px;
-    position: relative;
-    background: #2F65DD;
-}
-
-.signup-text {
-    left: 27.75px;
-    top: 11px;
-    position: absolute;
-    color: #F5F5F5;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;   
-}
-
-  /* Navbar links on hover */
-  .navbar-nav .nav-item .nav-link:hover {
-    color: #2F65DD; /* 마우스 오버 시 텍스트 색상 변경 */
-    font-weight: bold; /* 마우스 오버 시 폰트 굵게 */
-    /* 다른 스타일 변경 가능 */
-  }
-  
-  /* Signup button on hover */
-  .signup-button:hover {
-    background-color: #2F65DD; /* 마우스 오버 시 배경색 변경 */
-    /* 다른 스타일 변경 가능 */
-  }
-
-/* Breadcrumb Navigation Styles */
-.breadcrumb-nav {
-    font-size: 16px;
-    padding: 8px 20px;
-    background-color: #f5f5f5;
-    color: #333;
-    border-bottom: 1px solid #e1e1e1;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.breadcrumb-nav a {
-    color: #0275d8;
-    text-decoration: none;
-    margin-right: 5px;
-}
-
-.breadcrumb-nav a:hover {
-    text-decoration: underline;
-}
 
 /* 왼쪽 사이드바 */ 
 .sidebar {
@@ -197,80 +74,8 @@ th {
     border: 1px solid #ddd;
     background-color: #f8f8f8;
 }
-/* 메인 컨텐츠 스타일 */
-.main-content {
-    display: flex;
-    flex-direction: column; /* 가로 방향에서 세로 방향으로 변경 */
-    align-items: center; /* 가운데 정렬 */
-    padding: 20px;
-    width: calc(100% - 200px); /* 사이드바 너비를 제외한 전체 너비 */
-    margin-left: 200px; /* 사이드바와 메인 컨텐츠 사이의 여백 */
-}
 
-
-/* 동아리 컴포넌트 컨테이너 스타일 */
-.component-container {
-    
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50px;
-    margin-bottom: 100px;
-    padding: 10px;
-    border-radius: 8px; /* 카드에 둥근 테두리를 추가합니다. */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* 그림자 효과를 추가합니다. */
-    transition: transform 0.3s ease-in-out; /* 호버 효과를 위한 애니메이션을 추가합니다. */
-    
-}
-.component-container:hover {
-    transform: scale(1.05); /* 호버 시 약간 확대되는 효과를 줍니다. */
-}
-/* 동아리 이미지 및 설명 스타일 */
-.dongimg{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 200px; /* 원하는 가로 크기를 지정하세요 */
-    height: 150; /* 원하는 세로 크기를 지정하세요 */
-    object-fit: cover; /* 이미지가 지정한 크기에 맞게 잘리도록 설정합니다. */
-}
-.description {
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 250px; /* 원하는 가로 크기를 지정하세요 */
-    height: 150px; /* 원하는 세로 크기를 지정하세요 */
-    object-fit: cover; /* 이미지가 지정한 크기에 맞게 잘리도록 설정합니다. */
-}
-
-.logo-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px 8px 0 0; /* 이미지 상단에 둥근 테두리를 추가합니다. */
-}
-
-.description {
-   
-    flex-grow: 1; /* 설명 부분이 카드 뷰의 높이를 채우도록 설정 */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* 텍스트들을 수직으로 고르게 배치 */
-    margin-top: 10px;
-    border-radius: 0 0 8px 8px;
-    padding: 10px;
-    background-color: #f5f5f5;
-
-}
-
-.description p{
-   font-family: 'Orbit-Regular';
-    
-}
-
+/** 사이드바 끝 **/
 /* footer */
 footer {
     background-color: #f5f5f5;
@@ -331,15 +136,71 @@ footer {
   .footer-top a:hover {
     background-color: #555;
   }
-  .logo-image{
-    width: 300px;
-  }
+/**푸터 끝**/
 
 
-  
+
+/* 동아리 컴포넌트 컨테이너 스타일 */
+.component-container {
+    width: 250px;
+    border: 1px solid #ccc;
+    margin: 10px auto; /* 가운데 정렬을 위해 수정 */
+    padding: 10px;
+    box-sizing: border-box; /* 패딩을 포함한 너비 유지 */
+    display: flex; /* Flexbox 레이아웃 적용 */
+    flex-direction: column; /* 자식 요소를 수직으로 정렬 */
+    align-items: center; /* 자식 요소를 가운데 정렬 */
+    overflow: hidden; /* 넘치는 내용 숨김 */
+}
+.component-container:hover {
+    transform: scale(1.05); /* 호버 시 약간 확대되는 효과를 줍니다. */
+}
+/* 동아리 이미지 및 설명 스타일 */
+.dongimg {
+    width: 100%; /* 부모 컨테이너에 맞춤 */
+    height: 150px; /* 고정 높이 적용 */
+    display: flex; /* Flexbox 레이아웃 적용 */
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center; /* 세로 방향 가운데 정렬 */
+    overflow: hidden; /* 넘치는 내용 숨김 */
+}
+
+.logo-image {
+    width: auto; /* 원본 이미지 비율 유지 */
+    height: 100%; /* 부모 컨테이너의 높이에 맞춤 */
+    object-fit: contain; /* 컨테이너에 맞게 조절하되, 이미지 비율 유지 */
+}
+
+.description {
+    flex-grow: 1; /* 설명 부분이 카드 뷰의 높이를 채우도록 설정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 텍스트들을 수직으로 고르게 배치 */
+    margin-top: 10px;
+    border-radius: 0 0 8px 8px;
+    padding: 10px;
+    background-color: #f5f5f5;
+
+}
+
+.description p {
+    font-family: 'Orbit-Regular';
+    margin: 5px 0; /* 위아래 여백 추가 */
+    overflow: hidden; /* 넘치는 내용 숨김 */
+    white-space: nowrap; /* 텍스트를 한 줄로 유지 */
+    text-overflow: ellipsis; /* 넘치는 텍스트에 말줄임표 적용 */
+}
+.description p:last-child {
+    font-size: 1em; /* 기본 텍스트 크기의 80%로 설정 */
+}
   .between {
     
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+.logo-image {
+    width: 100px; /* 원하는 너비로 조정 */
+    height: 100px; /* 원하는 높이로 조정 */
+    object-fit: cover; /* 이미지의 비율을 유지하면서 요소에 맞게 조절 */
 }

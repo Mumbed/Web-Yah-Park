@@ -23,11 +23,16 @@ import QnaContent from './detail/QnaContent';
 
 import Edit from './detail/Edit';
 import EditNotice from './detail/EditNotice';
+import EditQna from './detail/EditQna';
 
 import NoticeWrite from './detail/NoticeWrite';
 import QnaWrite from './detail/QnaWrite';
 import Community_Content from './detail/Community_Content';
 import Somoim_Content from './detail/Somoim_Content';
+
+import TagInput from './header/notice_filter/TagInput';
+import ExampleList from './header/notice_filter/ExampleList';
+import projects from './header/notice_filter/projects';
 
 import { NoticeProvider } from './detail/NoticeContext'; // NoticeContext를 import합니다.
 import { QnaProvider } from './detail/QnaContext'; // NoticeContext를 import합니다.
@@ -52,6 +57,8 @@ function App() {
               <Route path="/QnaContent/:id" element={<QnaContent />} />
 
               <Route path="/EditNotice/:id" element={<EditNotice />} />
+              <Route path="/EditQna/:id" element={<EditQna />} />
+
               <Route path="/Professor" element={<Professor />} /> {/* element 속성으로 컴포넌트 지정 */}
               <Route path="/NoticeWrite" element={<NoticeWrite />} /> {/* element 속성으로 컴포넌트 지정 */}
               <Route path="/QnaWrite" element={<QnaWrite />} /> {/* element 속성으로 컴포넌트 지정 */}

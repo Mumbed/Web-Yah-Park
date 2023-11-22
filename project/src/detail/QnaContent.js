@@ -91,7 +91,7 @@ function QnaContent() {
             </div>
             <div className="bt_wrap">
               <Link to="/Qna" className="on">목록</Link>
-              <Link to={`/Edit/${qna.id}`} className="nav-link">수정</Link>
+              <Link to={`/EditQna/${qna.id}`} className="nav-link">수정</Link>
             </div>
           </div>
         ) : (
