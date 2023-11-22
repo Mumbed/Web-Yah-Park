@@ -329,3 +329,49 @@ footer {
   background-color: #555;
 }
 
+/* 검색 폼 컨테이너 스타일 */
+.search-form-container {
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+/* 검색 입력 요소 스타일 */
+.search-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 검색 선택 상자 스타일 */
+#srchColumn {
+  padding: 5px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* 검색어 입력란 스타일 */
+#srchWrd {
+  flex-grow: 1;
+  padding: 5px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* 검색 버튼 스타일 */
+button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

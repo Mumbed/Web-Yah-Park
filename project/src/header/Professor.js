@@ -344,12 +344,10 @@ function Professor() {
                                 <p>사무실 : 02-760-4133</p>
                                 <p>이메일 : </p>
                                 <p>jsum AT hansung.ac.kr</p>
-
                             </div>
-
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
 

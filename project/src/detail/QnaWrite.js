@@ -7,42 +7,43 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
 
 function Write() {
-    const navigate = useNavigate(); // useNavigate를 사용
-    const { qnas, setQnas } = useContext(QnaContext);
-    const [id, setId] = useState('101');
+  const navigate = useNavigate(); // useNavigate를 사용
+  const { qnas, setQnas } = useContext(QnaContext);
+  const [id, setId] = useState('101');
 
-    const [title, setTitle] = useState('');
-    const [author, setAuthor] = useState('');
-    const [password, setPassword] = useState('');
-    const [content, setContent] = useState('');
-    const handleIdChange = (e) => setId(e.target.value);
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const [password, setPassword] = useState('');
+  const [content, setContent] = useState('');
+  const handleIdChange = (e) => setId(e.target.value);
 
-    const handleTitleChange = (e) => setTitle(e.target.value);
-    const handleAuthorChange = (e) => setAuthor(e.target.value);
-    const handlePasswordChange = (e) => setPassword(e.target.value);
-    const handleContentChange = (e) => setContent(e.target.value);
-    const handleRegisterClick = () => {
-      const newId = qnas.length > 0 ? Math.max(...qnas.map(qna => qna.id)) + 1 : 101;
+  const handleTitleChange = (e) => setTitle(e.target.value);
+  const handleAuthorChange = (e) => setAuthor(e.target.value);
+  const handlePasswordChange = (e) => setPassword(e.target.value);
+  const handleContentChange = (e) => setContent(e.target.value);
+  const handleRegisterClick = () => {
+    const newId = qnas.length > 0 ? Math.max(...qnas.map(qna => qna.id)) + 1 : 101;
 
-      const newQna = {
-        id : newId, 
-        title,
-        author,
-        date: new Date().toLocaleDateString(),
-        views: 0,
-        content,
-      };
-  
-  
-      // Add the new notice to the existing noticedata array
-      setQnas([newQna, ...qnas]);
-
-      navigate('/Qna');
-
-  
-      // Optionally, redirect to the notice list page
-      // history.push('/notices');
+    const newQna = {
+      id: newId,
+      title,
+      author,
+      password,
+      date: new Date().toLocaleDateString(),
+      views: 0,
+      content,
     };
+
+
+    // Add the new notice to the existing noticedata array
+    setQnas([newQna, ...qnas]);
+
+    navigate('/Qna');
+
+
+    // Optionally, redirect to the notice list page
+    // history.push('/notices');
+  };
 
 
   return (
@@ -102,75 +103,75 @@ function Write() {
           <strong>Qna 글 등록하기</strong>
         </div>
         <div className="board_write_wrap">
-        <div className="board_write">
-  <div className="title">
-    <dl>
-      <dt>제목</dt>
-      <dd>
-        <input
-          type="text"
-          placeholder="제목 입력"
-          value={title}
-          onChange={handleTitleChange}
-        />
-      </dd>
-    </dl>
-  </div>
-  <div className="info">
-    <dl>
-      <dt>글쓴이</dt>
-      <dd>
-        <input
-          type="text"
-          placeholder="글쓴이 입력"
-          value={author}
-          onChange={handleAuthorChange}
-        />
-      </dd>
-    </dl>
-    <dl>
-      <dt>비밀번호</dt>
-      <dd>
-        <input
-          type="password"
-          placeholder="비밀번호 입력"
-          value={password}
-          onChange={handlePasswordChange}
-        />
-      </dd>
-    </dl>
-  </div>
-  <div className="cont">
-    <textarea
-      placeholder="내용 입력"
-      value={content}
-      onChange={handleContentChange}
-    ></textarea>
-  </div>
-</div>
-<div className="bt_wrap">
-  <button onClick={handleRegisterClick} style={{ 
-    display: 'inline-block',
-    minWidth: '80px',
-    marginLeft: '10px',
-    padding: '10px',
-    border: '1px solid #000',
-    borderRadius: '2px',
-    fontSize: '16px', // 폰트 크기를 16px로 변경
-    background: '#000',
-    color: '#fff',
-  }}>등록</button>
-  <Link to="/Qna" style={{
-    display: 'inline-block',
-    minWidth: '80px',
-    padding: '10px',
-    border: '1px solid #000',
-    borderRadius: '2px',
-    fontSize: '16px', // 폰트 크기를 16px로 변경
-    textDecoration: 'none',
-    color: 'inherit'
-  }}>취소</Link>
-</div>
+          <div className="board_write">
+            <div className="title">
+              <dl>
+                <dt>제목</dt>
+                <dd>
+                  <input
+                    type="text"
+                    placeholder="제목 입력"
+                    value={title}
+                    onChange={handleTitleChange}
+                  />
+                </dd>
+              </dl>
+            </div>
+            <div className="info">
+              <dl>
+                <dt>글쓴이</dt>
+                <dd>
+                  <input
+                    type="text"
+                    placeholder="글쓴이 입력"
+                    value={author}
+                    onChange={handleAuthorChange}
+                  />
+                </dd>
+              </dl>
+              <dl>
+                <dt>비밀번호</dt>
+                <dd>
+                  <input
+                    type="password"
+                    placeholder="비밀번호 입력"
+                    value={password}
+                    onChange={handlePasswordChange}
+                  />
+                </dd>
+              </dl>
+            </div>
+            <div className="cont">
+              <textarea
+                placeholder="내용 입력"
+                value={content}
+                onChange={handleContentChange}
+              ></textarea>
+            </div>
+          </div>
+          <div className="bt_wrap">
+            <button onClick={handleRegisterClick} style={{
+              display: 'inline-block',
+              minWidth: '80px',
+              marginLeft: '10px',
+              padding: '10px',
+              border: '1px solid #000',
+              borderRadius: '2px',
+              fontSize: '16px', // 폰트 크기를 16px로 변경
+              background: '#000',
+              color: '#fff',
+            }}>등록</button>
+            <Link to="/Qna" style={{
+              display: 'inline-block',
+              minWidth: '80px',
+              padding: '10px',
+              border: '1px solid #000',
+              borderRadius: '2px',
+              fontSize: '16px', // 폰트 크기를 16px로 변경
+              textDecoration: 'none',
+              color: 'inherit'
+            }}>취소</Link>
+          </div>
         </div>
       </div>
 

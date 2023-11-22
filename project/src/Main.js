@@ -1,17 +1,34 @@
-import React from 'react';
+
 import './Main.css';
+import './header/notice_filter/filter.css'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
 
 import Slider from './maincontents/Slider'; // 경로는 프로젝트 구조에 따라 조정
 import images from './maincontents/images';
 
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
 import { Routes } from 'react-router-dom'; // Routes 추가
+import React, { useState } from 'react';
+
+import TagInput from './header/notice_filter/TagInput';
+import ExampleList from './header/notice_filter/ExampleList';
+import projects from './header/notice_filter/projects';
+
 
 
 function Main() {
+
+  const [tags, setTags] = useState(['동아리']);
+
+  const handleTagChange = (tags) => {
+    setTags(tags);
+  };
+
+  const handleListTagClick = (tag) => {
+    setTags([...tags, tag]);
+  };
   return (
 
     <div>
@@ -28,17 +45,18 @@ function Main() {
                   <Link className="nav-link" to="/Notice">공지사항</Link>
                 </li>
                 <li className="nav-item dropdown">
-                  <Link className="nav-link dropdown-toggle" to="/Community" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <Link className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     커뮤니티
                   </Link>
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                     <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
+                    <li><Link className="dropdown-item" to="/Student_Notice">학생회공지</Link></li>
                     <li><Link className="dropdown-item" to="">갤러리</Link></li>
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
-                  <Link className="nav-link dropdown-toggle" to="/IntroMain" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <Link className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     학부소개
                   </Link>
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -69,6 +87,21 @@ function Main() {
       <div className="banner">
         <img src="./banner.png" alt="Night View" />
       </div>
+
+
+      {/* 이 곳에 기능 구현 */}
+      {/* TagInput 및 ExampleList 추가 */}
+      <section id="tagSection" className="mb-4">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 mx-auto text-center">
+              <h5 className="fw-light fs-3 fs-lg-5 lh-sm mb-4">중요 공지</h5>
+              <TagInput onTagChange={handleTagChange} tags={tags} />
+              <ExampleList items={projects} filter={tags} onTagClick={handleListTagClick} />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="services">
         <div className="container">
@@ -135,65 +168,6 @@ function Main() {
         </div>
       </section>
 
-
-
-      <section className="bg-100">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-7 mx-auto text-center my-5">
-              <h5 className="fw-light fs-3 fs-lg-5 lh-sm mb-4">공지사항</h5>
-              <p className="mb-3">컴퓨터공학부의 최신 공지사항을 소개합니다.</p>
-            </div>
-          </div>
-          <div className="row flex-center h-100">
-            <div className="col-xl-9">
-              <div className="row justify-content-center">
-                <div className="col-md-4 mb-4">
-                  <div className="card h-100 shadow card-span"><img className="card-img-top" src="new_1.png" alt="news" style={{ marginTop: '2.5rem', marginBottom: '2.5rem' }} />
-                    <div className="card-body">
-                      <svg className="bi bi-calendar2 me-2" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"></path>
-                        <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"> </path>
-                      </svg><span className="fs--1">2023년 11월 16일</span>
-                      <h5 className="fs-lg-1 my-3">★2023 동계 프로그래밍 캠프 모집 안내</h5>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4 mb-4">
-                  <div className="card h-100 shadow card-span"><img className="card-img-top" src="new_2.png" alt="news" style={{ marginTop: '2.5rem', marginBottom: '2.5rem' }} />
-                    <div className="card-body">
-                      <svg className="bi bi-calendar2 me-2" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"></path>
-                        <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"> </path>
-                      </svg><span className="fs--1">2023년 4월 6일</span>
-                      <h5 className="fs-lg-1 my-3">★2023 동계 프로그래밍 캠프 모집 안내</h5>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4 mb-4">
-                  <div className="card h-100 shadow card-span"><img className="card-img-top" src="new_3.png" alt="news" style={{ marginTop: '2.5rem', marginBottom: '2.5rem' }} />
-                    <div className="card-body">
-                      <svg className="bi bi-calendar2 me-2" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"></path>
-                        <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"> </path>
-                      </svg><span className="fs--1">2023년 1월 12일</span>
-                      <h5 className="fs-lg-1 my-3">★2023 동계 프로그래밍 캠프 모집 안내</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-12 d-flex justify-content-center my-3">
-              <button className="btn btn-lg btn-primary fw-light" type="submit">더보기
-                <svg className="bi bi-arrow-right-short" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16">
-                  <path fillRule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <div className="slider">
         <Slider title="학과사진" slides={images} />
       </div>
@@ -216,19 +190,11 @@ function Main() {
             전화: 02-760-4137, 02-760-4438
             팩스: 02-760-4488</p>
         </div>
-
-
       </div>
-
 
       <footer>
         <div className="footer-container">
-          <div className="footer-links">
-            <a href="#">| 게시판보기 | </a>
-            <a href="#">교수소개 사이트 | </a>
-            <a href="#">한성대학교 커리큘럼 |</a>
-          </div>
-          <div className="footer-info">
+          <div className="footer-info" >
             <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
             <p>대표 02-760-4114 입학 02-760-5800</p>
           </div>
