@@ -1,8 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { NoticeContext } from './NoticeContext';
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
-
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
 function EditNotice() {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -12,26 +11,26 @@ function EditNotice() {
     const [title, setTitle] = useState(noticeToEdit?.title || '');
     const [author, setAuthor] = useState(noticeToEdit?.author || '');
     const [content, setContent] = useState(noticeToEdit?.content || '');
-    const [password, setPassword] = useState(''); // 비밀번호 입력 상태 추가
-    const [editPassword, setEditPassword] = useState(''); // 사용자가 입력하는 비밀번호 상태 추가
+    const [password, setPassword] = useState(''); 
+    const [editPassword, setEditPassword] = useState(''); 
     const [category, setCategory] = useState(noticeToEdit?.category || '중요');
 
     useEffect(() => {
-        if (!noticeToEdit) navigate('/Notice'); // If no notice is found, redirect to notices page
+        if (!noticeToEdit) navigate('/Notice'); 
     }, [noticeToEdit, navigate]);
 
     const handleSave = () => {
-        if (noticeToEdit.password === editPassword) { // Check if the entered password matches the original one
+        if (noticeToEdit.password === editPassword) { 
             const updatedNotices = notices.map((notice) =>
                 notice.id.toString() === id
-                ? { ...notice, title, author, content, category } // category를 업데이트
+                ? { ...notice, title, author, content, category } 
                 : notice
             );
             setNotices(updatedNotices);
             navigate('/Notice');
         }
         else {
-            alert('비밀번호가 일치하지 않습니다.'); // 일치하지 않으면 경고 메시지 표시
+            alert('비밀번호가 일치하지 않습니다.');
         }
     };
     const handleCategoryChange = (e) => {
@@ -59,7 +58,6 @@ function EditNotice() {
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                                         <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
-                                        <li><Link className="dropdown-item" to="">갤러리</Link></li>
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">
@@ -164,11 +162,7 @@ function EditNotice() {
             </div>
             <footer>
                 <div className="footer-container">
-                    <div className="footer-links">
-                        <a href="#">|  게시판보기  | </a>
-                        <a href="#">교수소개 사이트    | </a>
-                        <a href="#">한성대학교 커리큘럼  |</a>
-                    </div>
+                   
                     <div className="footer-info">
                         <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
                         <p>대표 02-760-4114 입학 02-760-5800</p>

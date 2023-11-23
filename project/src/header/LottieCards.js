@@ -3,8 +3,8 @@
 import React from 'react';
 import './LottieCards.css';
 import Lottie from 'react-lottie';
-import cardData from './cardData';  // 경로를 실제 파일 경로로 수정
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
+import cardData from './cardData';  
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const LottieCards = () => {
   const defaultOptions = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'; // Routes 추가
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'; 
 import Main from './Main';
 
 import Community from './header/Community';

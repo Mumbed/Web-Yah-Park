@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './Intro.module.css'; 
 import LottieCards from './LottieCards';
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
 
 const IntroMain = () => {
   return (
