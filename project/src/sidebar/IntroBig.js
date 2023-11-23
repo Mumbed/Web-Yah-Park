@@ -2,13 +2,17 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-import './style/IntroBig.css'; // CSS 파일을 import 합니다.
+import './style/IntroBig.css';
 
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
-import { Routes } from 'react-router-dom'; // Routes 추가
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
+import { Routes } from 'react-router-dom'; 
 import { Collection, GearFill, Speedometer, Table } from 'react-bootstrap-icons';
+import { useEffect } from 'react';
 
 function IntroBig() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <header>
@@ -30,7 +34,6 @@ function IntroBig() {
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                     <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
-                    <li><Link className="dropdown-item" to="">갤러리</Link></li>
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
@@ -348,11 +351,7 @@ function IntroBig() {
 
       <footer>
         <div className="footer-container">
-          <div className="footer-links">
-            <a href="#">|  게시판보기  | </a>
-            <a href="#">교수소개 사이트    | </a>
-            <a href="#">한성대학교 커리큘럼  |</a>
-          </div>
+          
           <div className="footer-info">
             <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
             <p>대표 02-760-4114 입학 02-760-5800</p>

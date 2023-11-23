@@ -1,35 +1,35 @@
 const images = [
   {
     source: "/main1.jpeg",
-    title: "징동 나와" // Replace with your desired title
+    title: "공경진" 
   },
   {
     source: "/main2.jpeg",
-    title: "웨이보 나와" // Replace with your desired title
+    title: "캡스톤" 
   },
   {
     source: "/main3.jpeg",
-    title: "뉴진스 나와" // Replace with your desired title
+    title: "ipp" 
   },
   {
     source: "/main4.jpeg",
-    title: "lpl 비상" // Replace with your desired title
+    title: "공모전" 
   },
   {
     source: "/main5.jpeg",
-    title: "고척돔 나와" // Replace with your desired title
+    title: "프로젝트" 
   },
   {
     source: "/main6.jpeg",
-    title: "너 재능있어" // Replace with your desired title
+    title: "동아리" 
   },
   {
     source: "/main7.png",
-    title: "그대로만해" // Replace with your desired title
+    title: "소모임" 
   },
   {
     source: "/main8.jpeg",
-    title: "할 수 있어" // Replace with your desired title
+    title: "코딩캠프" 
   }
 ];
 

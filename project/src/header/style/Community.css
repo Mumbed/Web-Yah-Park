@@ -1,9 +1,8 @@
 .navbar {
   position: absolute; 
   width: 100%;
-  z-index: 1000; /* 다른 요소들보다 위에 표시되도록 설정 */
+  z-index: 1000;
 }
-/* 이미지 및 설명 스타일 */
 .dongimg,
 .description {
   width: 100%;
@@ -18,11 +17,10 @@
   text-align: center;
   font-size: 14px;
   color: #333;
-  margin-top: 10px; /* 이미지와 설명 사이 여백 추가 */
+  margin-top: 10px; 
 }
 
 
-/* 메인 컨텐츠 스타일 */
 .main-contents {
   width: 80%; /* 메인 컨텐츠 너비 설정 */
   float: left; /* 왼쪽으로 부유(floating) */

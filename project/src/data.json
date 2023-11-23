@@ -3,14 +3,14 @@
     {
       "id": 1,
       "name": "BUG",
-      "image": "BUG_Img.jpg",
+      "image": "BUG.png",
       "description": "한성대학교 컴퓨터 공학부 동아리 BUG입니다.",
       "link": "/Community_Content"
     },
     {
       "id": 2,
       "name": "UMC",
-      "image": "UMC.jpg",
+      "image": "UMC.png",
       "description": "대학 연합 동아리 UMC 입니다.",
       "link": "/Community_Content"
     },

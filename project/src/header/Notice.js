@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
 import faker from 'faker';
-import Content from '../detail/NoticeContent'; // Content 컴포넌트를 import
+import Content from '../detail/NoticeContent'; 
 import { NoticeContext } from '../detail/NoticeContext';
 
-import './style/Notice.css'; // CSS 파일을 import 합니다.
+import './style/Notice.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -13,21 +13,18 @@ import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 function Notice() {
   const { notices, setNotices } = useContext(NoticeContext);
   const [searchTerm, setSearchTerm] = useState('');
-  const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태를 추가
+  const [currentPage, setCurrentPage] = useState(1); 
   const [filteredNotices, setFilteredNotices] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(''); // 선택된 카테고리 상태 추가
+  const [selectedCategory, setSelectedCategory] = useState(''); 
 
-  const itemsPerPage = 10; // 페이지당 표시할 아이템 수
+  const itemsPerPage = 10; 
 
-  // 페이지 번호를 계산합니다.
   const totalPages = Math.ceil((searchTerm === '' ? notices : filteredNotices).length / itemsPerPage) || 1;
 
-  // 페이지 변경 함수를 정의합니다.
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
 
-  // 필터링된 공지사항을 현재 페이지에 맞게 슬라이스합니다.
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const paginatedNotices = (searchTerm === '' ? notices : filteredNotices).slice(startIndex, endIndex);
@@ -45,28 +42,24 @@ function Notice() {
     setSelectedCategory(e.target.value);
   };
   const handleSearch = () => {
-    // 검색어를 이용하여 공지사항을 필터링합니다.
     const filteredNotices = notices.filter((notice) => {
-      // 검색어를 대소문자 구분 없이 비교합니다.
       const title = notice.title.toLowerCase();
       const author = notice.author.toLowerCase();
       const content = notice.content.toLowerCase();
-      const category = notice.category.toLowerCase(); // 카테고리 정보를 소문자로 비교
+      const category = notice.category.toLowerCase(); 
 
       const searchTermLower = searchTerm.toLowerCase();
-    const categoryLower = selectedCategory.toLowerCase(); // 선택된 카테고리도 소문자로 변환
+    const categoryLower = selectedCategory.toLowerCase();
 
     return (
       (title.includes(searchTermLower) || 
       author.includes(searchTermLower) || 
       content.includes(searchTermLower)) ||
-      category.includes(searchTermLower) // 선택된 카테고리와 비교
+      category.includes(searchTermLower) 
     );
     });
 
-    // 필터링된 공지사항을 설정합니다.
     setFilteredNotices(filteredNotices);
-    // 검색이 발생하면 페이지를 1로 초기화합니다.
     setCurrentPage(1);
   };
 
@@ -92,7 +85,6 @@ function Notice() {
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                     <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
-                    <li><Link className="dropdown-item" to="">갤러리</Link></li>
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
@@ -248,11 +240,7 @@ function Notice() {
 
       <footer>
         <div className="footer-container">
-          <div className="footer-links">
-            <a href="#">| 게시판보기 |</a>
-            <a href="#">교수소개 사이트 |</a>
-            <a href="#">한성대학교 커리큘럼 |</a>
-          </div>
+         
           <div className="footer-info">
             <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
             <p>대표 02-760-4114 입학 02-760-5800</p>

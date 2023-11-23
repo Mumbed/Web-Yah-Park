@@ -1,11 +1,12 @@
 import React from 'react';
-import './style/Community.css'; // 커스텀 스타일 시트를 import 합니다.
-import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS를 import 합니다.
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'; // Routes 추가
-import data from '../somoim.json'
-import Sidebar from '../Sidebar'; // Sidebar 컴포넌트를 올바른 경로로 불러옵니다.
+import './style/Community.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
+import data from '../data.json';
 
-function Somoim() {
+
+
+function Community() {
   return (
     <div>
       <header>
@@ -27,7 +28,6 @@ function Somoim() {
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                     <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
-                    <li><Link className="dropdown-item" to="">갤러리</Link></li>
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
@@ -57,23 +57,19 @@ function Somoim() {
           </div>
         </nav>
       </header>
-      <div className='sidebar'>
-        <Sidebar />
-      </div>
+
       <div className="board">
-
         <div className="main-contents">
-
           <div className="circle-container">
 
-            {data.somoims.map((somoim) => (
-              <div className="circle" key={somoim.id}>
+            {data.communities.map((community) => (
+              <div className="circle" key={community.id}>
                 <div className="circle-content">
-                  <img src={somoim.image} alt={`${somoim.name} 로고`} className="circle-logo" />
+                  <img src={community.image} alt={`${community.name} 로고`} className="circle-logo" />
                   <div className="circle-info">
-                    <h3>{somoim.name}</h3>
-                    <p>{somoim.description}</p>
-                    <Link to={`/Somoim_Content/${somoim.id}`} className="btn btn-primary">
+                    <h3>{community.name}</h3>
+                    <p>{community.description}</p>
+                    <Link to={`/Community_Content/${community.id}`} className="btn btn-primary">
                       더 알아보기
                     </Link>
                   </div>
@@ -89,11 +85,7 @@ function Somoim() {
 
       <footer>
         <div className="footer-container">
-          <div className="footer-links">
-            <a href="#">| 게시판보기 |</a>
-            <a href="#">교수소개 사이트 |</a>
-            <a href="#">한성대학교 커리큘럼 |</a>
-          </div>
+          
           <div className="footer-info">
             <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
             <p>대표 02-760-4114 입학 02-760-5800</p>
@@ -107,4 +99,4 @@ function Somoim() {
   );
 }
 
-export default Somoim;
+export default Community;

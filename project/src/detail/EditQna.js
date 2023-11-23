@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { QnaContext } from './QnaContext';
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
 
 function EditQna() {
     const { id } = useParams();
@@ -12,15 +12,15 @@ function EditQna() {
     const [title, setTitle] = useState(qnaToEdit?.title || '');
     const [author, setAuthor] = useState(qnaToEdit?.author || '');
     const [content, setContent] = useState(qnaToEdit?.content || '');
-    const [password, setPassword] = useState(''); // 비밀번호 입력 상태 추가
-    const [editPassword, setEditPassword] = useState(''); // 사용자가 입력하는 비밀번호 상태 추가
+    const [password, setPassword] = useState(''); 
+    const [editPassword, setEditPassword] = useState('');
   
     useEffect(() => {
-        if (!qnaToEdit) navigate('/Qna'); // If no notice is found, redirect to notices page
+        if (!qnaToEdit) navigate('/Qna'); 
     }, [qnaToEdit, navigate]);
 
     const handleSave = () => {
-        if (qnaToEdit.password === editPassword) { // Check if the entered password matches the original one
+        if (qnaToEdit.password === editPassword) { 
             const updatedQnas = qnas.map((qna) =>
             qna.id.toString() === id
                 ? { ...qna, title, author, content }
@@ -55,7 +55,6 @@ function EditQna() {
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                                         <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
-                                        <li><Link className="dropdown-item" to="">갤러리</Link></li>
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">
@@ -149,11 +148,7 @@ function EditQna() {
             </div>
             <footer>
                 <div className="footer-container">
-                    <div className="footer-links">
-                        <a href="#">|  게시판보기  | </a>
-                        <a href="#">교수소개 사이트    | </a>
-                        <a href="#">한성대학교 커리큘럼  |</a>
-                    </div>
+             
                     <div className="footer-info">
                         <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
                         <p>대표 02-760-4114 입학 02-760-5800</p>

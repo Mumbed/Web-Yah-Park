@@ -1,27 +1,24 @@
 import React, { useState, useContext } from 'react';
-import './style/Qna.css'; // CSS 파일을 import 합니다.
+import './style/Qna.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { QnaContext } from '../detail/QnaContext';
 
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
 
 function Qna() {
-  const { qnas, setQnas } = useContext(QnaContext); // NoticeContext에서 공지사항 데이터를 가져옵니다.
+  const { qnas, setQnas } = useContext(QnaContext); 
   const [searchTerm, setSearchTerm] = useState('');
-  const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태를 추가
+  const [currentPage, setCurrentPage] = useState(1);
   const [filteredQnas, setFilteredQnas] = useState([]);
-  const itemsPerPage = 10; // 페이지당 표시할 아이템 수
+  const itemsPerPage = 10; 
 
-  // 페이지 번호를 계산합니다.
   const totalPages = Math.ceil((searchTerm === '' ? qnas : filteredQnas).length / itemsPerPage) || 1;
 
-  // 페이지 변경 함수를 정의합니다.
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
 
-  // 공지사항 데이터를 현재 페이지에 맞게 필터링합니다.
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const paginatedQnas = (searchTerm === '' ? qnas : filteredQnas).slice(startIndex, endIndex);
@@ -36,15 +33,12 @@ function Qna() {
   };
 
   const handleSearch = () => {
-    // 검색어를 이용하여 공지사항을 필터링합니다.
     const filteredQnas = qnas.filter((qna) => {
-      // 검색어를 대소문자 구분 없이 비교합니다.
       const title = qna.title.toLowerCase();
       const author = qna.author.toLowerCase();
       const content = qna.content.toLowerCase();
       const searchTermLower = searchTerm.toLowerCase();
 
-      // 제목, 글쓴이, 내용 중에서 검색어를 포함하는 공지사항을 찾습니다.
       return (
         title.includes(searchTermLower) ||
         author.includes(searchTermLower) ||
@@ -52,9 +46,7 @@ function Qna() {
       );
     });
 
-    // 필터링된 공지사항을 설정합니다.
     setFilteredQnas(filteredQnas);
-    // 검색이 발생하면 페이지를 1로 초기화합니다.
     setCurrentPage(1);
   };
   return (
@@ -78,7 +70,6 @@ function Qna() {
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                     <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
-                    <li><Link className="dropdown-item" to="">갤러리</Link></li>
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
@@ -228,11 +219,7 @@ function Qna() {
 
       <footer>
         <div className="footer-container">
-          <div className="footer-links">
-            <a href="#">| 게시판보기 |</a>
-            <a href="#">교수소개 사이트 |</a>
-            <a href="#">한성대학교 커리큘럼 |</a>
-          </div>
+          
           <div className="footer-info">
             <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
             <p>대표 02-760-4114 입학 02-760-5800</p>

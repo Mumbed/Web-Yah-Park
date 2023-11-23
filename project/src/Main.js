@@ -5,17 +5,16 @@ import './header/notice_filter/filter.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-import Slider from './maincontents/Slider'; // 경로는 프로젝트 구조에 따라 조정
+import Slider from './maincontents/Slider';
 import images from './maincontents/images';
 
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
-import { Routes } from 'react-router-dom'; // Routes 추가
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
 import React, { useState } from 'react';
 
 import TagInput from './header/notice_filter/TagInput';
 import ExampleList from './header/notice_filter/ExampleList';
 import projects from './header/notice_filter/projects';
-
 
 
 function Main() {
@@ -51,8 +50,6 @@ function Main() {
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                     <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
-                    <li><Link className="dropdown-item" to="/Student_Notice">학생회공지</Link></li>
-                    <li><Link className="dropdown-item" to="">갤러리</Link></li>
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
@@ -90,7 +87,6 @@ function Main() {
 
 
       {/* 이 곳에 기능 구현 */}
-      {/* TagInput 및 ExampleList 추가 */}
       <section id="tagSection" className="mb-4">
         <div className="container">
           <div className="row">
@@ -121,7 +117,7 @@ function Main() {
                       <div className="card-body">
                         <h6 className="fw-light fs-1 heading-color">모바일SW트랙</h6>
                         <p className="mt-3 mb-md-0 mb-lg-3">네트워크 지식과 프로그래밍 기술을 바탕으로 스마트폰 OS 및 소프트웨어 개발,  모바일 UI/UX 교육</p>
-                        <a className="btn btn-lg ps-0 pe-3 text-primary" href="#" role="button">Learn more</a>
+                        <Link to="IntroMobile" className="btn btn-lg ps-0 pe-3 text-primary" role="button">Learn more</Link>
                       </div>
                     </div>
                   </div>
@@ -133,7 +129,7 @@ function Main() {
                       <div className="card-body">
                         <h6 className="fw-light fs-1 heading-color">웹 공학트랙</h6>
                         <p className="mt-3 mb-md-0 mb-lg-3">산업 현장에서 활용하고 있는 전문 기술 및 도구를 바탕으로 서비스를 구축하는 소프트웨어 개발 전문가 양성</p>
-                        <a className="btn btn-lg ps-0 pe-3 text-primary" href="#" role="button">Learn more</a>
+                        <Link to="IntroWeb" className="btn btn-lg ps-0 pe-3 text-primary" role="button">Learn more</Link>
                       </div>
                     </div>
                   </div>
@@ -145,7 +141,7 @@ function Main() {
                       <div className="card-body">
                         <h6 className="fw-light fs-1 heading-color">빅데이터트랙</h6>
                         <p className="mt-3 mb-md-0 mb-lg-3">기본적인 데이터베이스 이론 및 설계 기술의 습득을 시작으로 다양한 분야에 맞는 실무 중심의 교육</p>
-                        <a className="btn btn-lg ps-0 pe-3 text-primary" href="#" role="button">Learn more</a>
+                        <Link to="IntroBig" className="btn btn-lg ps-0 pe-3 text-primary" role="button">Learn more</Link>
                       </div>
                     </div>
                   </div>
@@ -157,7 +153,7 @@ function Main() {
                       <div className="card-body">
                         <h6 className="fw-light fs-1 heading-color">디지털콘텐츠/가상현실 트랙</h6>
                         <p className="mt-3 mb-md-0 mb-lg-3">능숙한 콘텐츠 제작 도구 사용 기술을 바탕으로 실무적 콘텐츠 제작, 게임, VR, AR 등</p>
-                        <a className="btn btn-lg ps-0 pe-3 text-primary" href="#" role="button">Learn more</a>
+                        <Link to="IntroGraphic" className="btn btn-lg ps-0 pe-3 text-primary" role="button">Learn more</Link>
                       </div>
                     </div>
                   </div>
@@ -185,10 +181,10 @@ function Main() {
         <div className="location-details">
           <p>위치: 한성대학교 공학관 A동 104호</p>
           <p>대중 교통: 한성대입구역(4호선) 2번 출구 마을버스 2번 승차, 창신역(6호선) 3번 출구 마을버스 3번 승차</p>
-          <p>주소: 02876 서울시 성북구 삼선교로 16길 116 한성대학교</p>
+          <p>주소: 02876 서울시 성북구 삼선교로 16길 116</p>
           <p>연락처
-            전화: 02-760-4137, 02-760-4438
-            팩스: 02-760-4488</p>
+            전화: 02-760-4137, 02-760-4438</p>
+            <p>팩스: 02-760-4488</p>
         </div>
       </div>
 
