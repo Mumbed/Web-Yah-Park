@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'Orbit-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+main-pro {
+    flex-grow: 1; /* 남은 공간 모두 채우기 */
+    margin-left: 100px; /* 사이드바 너비 만큼 여백 추가 */
+    margin-right: 100px; /* 사이드바 너비 만큼 여백 추가 */
+
+    padding: 20px; /* Padding to prevent content from touching the edges */
+    background-color: #fff; /* 메인 컨텐츠 배경색 설정 */
+    overflow-y: auto; /* Allow scrolling of the main content */
+    margin: 300px
+}
+/* footer */
+footer {
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    background-color: #f5f5f5; /* 푸터 배경색 설정 */
+    /* 추가적인 푸터 스타일링 */
+  }
+
+  
+  .footer-logo img {
+    width: 50px; /* Adjust as necessary */
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  
+  .footer-links a {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-info p {
+    margin: 5px 0;
+  }
+  
+  .footer-copy {
+    margin-top: 5px; /* Add space above the copyright text */
+    width: 100%;
+  }
+  
+  .footer-top {
+    padding-top: 10px;
+  }
+  
+  .footer-top a {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .footer-top a:hover {
+    background-color: #555;
+  }
+/**푸터 끝**/
+
+/* 동아리 컴포넌트 컨테이너 스타일 */
+.component-con {
+    width: 500px;
+    border: 1px solid #ccc;
+    margin: 10px auto; /* 가운데 정렬을 위해 수정 */
+    padding: 10px;
+    box-sizing: border-box; /* 패딩을 포함한 너비 유지 */
+    display: flex; /* Flexbox 레이아웃 적용 */
+    flex-direction: column; /* 자식 요소를 수직으로 정렬 */
+    align-items: center; /* 자식 요소를 가운데 정렬 */
+    overflow: hidden; /* 넘치는 내용 숨김 */
+}
+.component-con:hover {
+    transform: scale(1.05); /* 호버 시 약간 확대되는 효과를 줍니다. */
+}
+/* 동아리 이미지 및 설명 스타일 */
+.dongimg {
+    width: 100%; /* 부모 컨테이너에 맞춤 */
+    height: 150px; /* 고정 높이 적용 */
+    display: flex; /* Flexbox 레이아웃 적용 */
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center; /* 세로 방향 가운데 정렬 */
+    overflow: hidden; /* 넘치는 내용 숨김 */
+}
+
+.logo-image {
+    width: auto; /* 원본 이미지 비율 유지 */
+    height: 100%; /* 부모 컨테이너의 높이에 맞춤 */
+    object-fit: contain; /* 컨테이너에 맞게 조절하되, 이미지 비율 유지 */
+}
+
+.description {
+    flex-grow: 1; /* 설명 부분이 카드 뷰의 높이를 채우도록 설정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 텍스트들을 수직으로 고르게 배치 */
+    margin-top: 10px;
+    border-radius: 0 0 8px 8px;
+    padding: 10px;
+    background-color: #f5f5f5;
+
+}
+
+.description p {
+    font-family: 'Orbit-Regular';
+    margin: 5px 0; /* 위아래 여백 추가 */
+    overflow: hidden; /* 넘치는 내용 숨김 */
+    white-space: nowrap; /* 텍스트를 한 줄로 유지 */
+    text-overflow: ellipsis; /* 넘치는 텍스트에 말줄임표 적용 */
+    font-size: 1.5em; /* 모든 텍스트의 기본 크기를 설정 */
+
+}
+.description p:last-child {
+    font-size: 1.3em; /* 기본 텍스트 크기의 80%로 설정 */
+}
+  .between {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.logo-image {
+    width: 100px; /* 원하는 너비로 조정 */
+    height: 100px; /* 원하는 높이로 조정 */
+    object-fit: cover; /* 이미지의 비율을 유지하면서 요소에 맞게 조절 */
+}

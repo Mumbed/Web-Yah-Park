@@ -1,0 +1,75 @@
+{
+  "communities": [
+    {
+      "id": 1,
+      "name": "BUG",
+      "image": "BUG_Img.jpg",
+      "description": "한성대학교 컴퓨터 공학부 동아리 BUG입니다.",
+      "link": "/Community_Content"
+    },
+    {
+      "id": 2,
+      "name": "UMC",
+      "image": "UMC.jpg",
+      "description": "대학 연합 동아리 UMC 입니다.",
+      "link": "/Community_Content"
+    },
+    {
+      "id": 3,
+      "name": "멋쟁이 사자처럼",
+      "image": "Lion.png",
+      "description": "대학 연합 동아리 멋쟁이 사자처럼 입니다.",
+      "link": "/Community_Content"
+    },
+    {
+      "id": 4,
+      "name": "멋쟁이 사자처럼",
+      "image": "Lion.png",
+      "description": "대학 연합 동아리 멋쟁이 사자처럼 입니다.",
+      "link": "/Community_Content"
+    },
+    {
+      "id": 5,
+      "name": "멋쟁이 사자처럼",
+      "image": "Lion.png",
+      "description": "대학 연합 동아리 멋쟁이 사자처럼 입니다.",
+      "link": "/Community_Content"
+    },
+    {
+      "id": 6,
+      "name": "멋쟁이 사자처럼",
+      "image": "Lion.png",
+      "description": "대학 연합 동아리 멋쟁이 사자처럼 입니다.",
+      "link": "/Community_Content"
+    },
+    {
+      "id": 7,
+      "name": "멋쟁이 사자처럼",
+      "image": "Lion.png",
+      "description": "대학 연합 동아리 멋쟁이 사자처럼 입니다.",
+      "link": "/Community_Content"
+    },
+    {
+      "id": 8,
+      "name": "멋쟁이 사자처럼",
+      "image": "Lion.png",
+      "description": "대학 연합 동아리 멋쟁이 사자처럼 입니다.",
+      "link": "/Community_Content"
+    },
+    {
+      "id": 9,
+      "name": "멋쟁이 사자처럼",
+      "image": "Lion.png",
+      "description": "대학 연합 동아리 멋쟁이 사자처럼 입니다.",
+      "link": "/Community_Content"
+    },
+     {
+      "id": 10,
+      "name": "멋쟁이 사자처럼",
+      "image": "Lion.png",
+      "description": "대학 연합 동아리 멋쟁이 사자처럼 입니다.",
+      "link": "/Community_Content"
+    }
+    
+  ]
+}

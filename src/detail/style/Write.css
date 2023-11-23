@@ -1,0 +1,457 @@
+  
+  .board_wrapping {
+    width: 1000px;
+    margin: 100px auto;
+    font-size: 16px; /* 폰트 크기를 16px로 변경 */
+  }
+  
+  .board_title {
+    margin-bottom: 30px;
+  }
+  
+  .board_title strong {
+    font-size: 16px; /* 폰트 크기를 16px로 변경 */
+  }
+  
+  .board_title p {
+    margin-top: 5px;
+    font-size: 22px; /* 폰트 크기를 22px로 변경 */
+  }
+  
+  .bt_wrap {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0;
+  }
+  
+  .bt_wrap a {
+    display: inline-block;
+    min-width: 80px;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    font-size: 16px; /* 폰트 크기를 16px로 변경 */
+  }
+  
+  .bt_wrap a:first-child {
+    margin-left: 0;
+  }
+  
+  .bt_wrap a.on {
+    background: #000;
+    color: #fff;
+    font-size: 16px; /* 폰트 크기를 16px로 변경 */
+  }
+  
+  .board_lists {
+    width: 100%;
+    border-top: 2px solid #000;
+  }
+  
+  .board_lists > div {
+    border-bottom: 1px solid #ddd;
+    font-size: 0;
+  }
+  
+  .board_lists > div.top {
+    border-bottom: 1px solid #999;
+  }
+  
+  .board_lists > div:last-child {
+    border-bottom: 1px solid #000;
+  }
+  
+  .board_lists > div > div {
+    display: inline-block;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 16px; /* 폰트 크기를 16px로 변경 */
+  }
+  
+  .board_lists > div.top > div {
+    font-weight: 600;
+  }
+  
+  .board_lists .nums {
+    width: 10%;
+  }
+  
+  .board_lists .titles {
+    width: 50%;
+  }
+  .board_lists .titles {
+    width: 50%;
+  }
+  
+  .board_lists .writers {
+    width: 10%;
+  }
+  
+  .board_lists .dates {
+    width: 10%;
+  }
+  
+  .board_lists .counts {
+    width: 10%;
+  }
+  
+  .board_lists .category {
+    width: 10%;
+  }
+  
+
+
+
+  .board_page {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0;
+  }
+  
+  .board_page a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    border-left: 0;
+    line-height: 100%;
+  }
+  
+  .board_page a.bt {
+    padding-top: 10px;
+    font-size: 16px; /* 폰트 크기를 16px로 변경 */
+    letter-spacing: -1px;
+  }
+  
+  .board_page a.num {
+    padding-top: 9px;
+    font-size: 16px; /* 폰트 크기를 16px로 변경 */
+  }
+  
+  .board_page a.num.on {
+    border-color: #000;
+    background: #000;
+    color: #fff;
+  }
+  
+  .board_page a:first-child {
+    border-left: 1px solid #ddd;
+  }
+  
+  .board_view {
+    width: 100%;
+    border-top: 2px solid #000;
+  }
+  
+  .board_view .title {
+    padding: 20px 15px;
+    border-bottom: 1px dashed #ddd;
+    font-size: 16px; /* 폰트 크기를 16px로 변경 */
+  }
+  
+  .board_view .info {
+    padding: 15px;
+    border-bottom: 1px solid #999;
+    font-size: 0;
+  }
+  
+  .board_view .info dl {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+  }
+  
+  .board_view .info dl:first-child {
+    padding-left: 0;
+  }
+  
+  .board_view .info dl::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 0;
+    display: block;
+    width: 1px;
+    height: 13px;
+    background: #ddd;
+  }
+  
+  .board_view .info dl:first-child::before {
+    display: none;
+  }
+  
+  .board_view .info dl dt,
+  .board_view .info dl dd {
+    display: inline-block;
+    font-size: 16px; /* 폰트 크기를 16px로 변경 */
+  }
+  
+  .board_view .info dl dd {
+    margin-left: 10px;
+    color: #777;
+  }
+  
+  .board_view .cont {
+    padding: 15px;
+    border-bottom: 1px solid #000;
+    line-height: 160%;
+    font-size: 16px; /* 폰트 크기를 16px로 변경 */
+  }
+  
+  .board_write {
+    border-top: 2px solid #000;
+  }
+  
+  .board_write .title,
+  .board_write .info {
+    padding: 15px;
+  }
+  
+  .board_write .info {
+    border-top: 1px dashed #ddd;
+    border-bottom: 1px solid #000;
+    font-size: 0;
+  }
+  
+  .board_write .title dl {
+    font-size: 0;
+  }
+  
+  .board_write .info dl {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+  }
+  
+  .board_write .title dt,
+  .board_write .title dd,
+  .board_write .info dt,
+  .board_write .info dd {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px; /* 폰트 크기를 16px로 변경 */
+  }
+  
+  .board_write .title dt,
+  .board_write .info dt {
+    width: 100px;
+  }
+  
+  .board_write .title dd {
+    width: calc(100% - 100px);
+  }
+  
+  .board_write .title input[type="text"],
+  .board_write .info input[type="text"],
+  .board_write .info input[type="password"] {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .board_write .title input[type="text"] {
+    width: 80%;
+  }
+  
+  .board_write .cont {
+    border-bottom: 1px solid #000;
+  }
+  
+  .board_write .cont textarea {
+    display: block;
+    width: 100%;
+    height: 300px;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 0;
+    resize: vertical;
+  }
+  
+  /* Header and Navigation Styles */
+  header {
+    width: 100%;
+    background-color: #f5f5f5; /* 헤더 배경색 설정 */
+    /* 추가적인 헤더 스타일링 */
+  }
+  
+  .nav-container {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    position: relative;
+  }
+  
+  .nav-inner {
+    width: 95%; /* 변경 */
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+  
+  .department-name, .menu-item, .account-action {
+    color: #36384E;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 20px;
+    word-wrap: break-word;
+  }
+  
+  .department-name {
+    font-size: 16px; /* 폰트 크기를 16px로 변경 */
+    font-weight: 700;
+    margin-right: 20px; /* 간격 추가 */
+  }
+  
+  .menu-container {
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+  }
+  
+  .menu-item {
+    font-size: 16px;
+    margin-right: 20px; /* 간격 추가 */
+  }
+  
+  .account-container {
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+  }
+  
+  .account-action {
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 20px; /* 간격 추가 */
+  }
+  
+  .signup-button {
+    width: 117px;
+    height: 42px;
+    position: relative;
+    background: #2F65DD;
+  }
+  
+  .signup-text {
+    left: 27.75px;
+    top: 11px;
+    position: absolute;
+    color: #F5F5F5;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;   
+  }
+  
+  /* Navbar links on hover */
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #2F65DD; /* 마우스 오버 시 텍스트 색상 변경 */
+    font-weight: bold; /* 마우스 오버 시 폰트 굵게 */
+    /* 다른 스타일 변경 가능 */
+  }
+  
+  /* Signup button on hover */
+  .signup-button:hover {
+    background-color: #2F65DD; /* 마우스 오버 시 배경색 변경 */
+    /* 다른 스타일 변경 가능 */
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .board-cate ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .board-cate li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  .board-cate li a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .board-cate li.active a {
+    color: #4CAF50;
+  }
+  
+  .board-search {
+    margin-top: 20px;
+  }
+  
+  .util-search {
+    margin-bottom: 10px;
+  }
+  
+  .util-search .new_win {
+    text-decoration: none;
+    color: #000;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+  
+  /* footer */
+  footer {
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  
+  .footer-links a {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-info p {
+    margin: 5px 0;
+  }
+  
+  .footer-copy {
+    margin-top: 5px; /* Add space above the copyright text */
+    width: 100%;
+  }
+  
+  .footer-top {
+    padding-top: 10px;
+  }
+  
+  .footer-top a {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .footer-top a:hover {
+    background-color: #555;
+  }
+  

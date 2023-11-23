@@ -1,0 +1,109 @@
+
+.signin-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+
+.signin-container h1{
+    font-size: 2.5rem;
+}
+
+.signin-form{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto 0;
+    max-width: 30rem;
+}
+.signin-form input{
+    width: 100%;
+    font-size: 1.6rem;
+    line-height: 2;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border: 3px solid lightblue;
+
+}
+
+#signin{
+    padding-left: 0;
+    background-color:lightblue;
+    /* border: 3px blue; */
+    color: white;
+    cursor: pointer;
+}
+#signin:hover{
+    color:black;
+}
+
+
+
+/* footer */
+footer {
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    background-color: #f5f5f5; /* 푸터 배경색 설정 */
+    /* 추가적인 푸터 스타일링 */
+  }
+
+  
+  .footer-logo img {
+    width: 50px; /* Adjust as necessary */
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  
+  .footer-links a {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-info p {
+    margin: 5px 0;
+  }
+  
+  .footer-copy {
+    margin-top: 5px; /* Add space above the copyright text */
+    width: 100%;
+  }
+  
+  .footer-top {
+    padding-top: 10px;
+  }
+  
+  .footer-top a {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .footer-top a:hover {
+    background-color: #555;
+  }
