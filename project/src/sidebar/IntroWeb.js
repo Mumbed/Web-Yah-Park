@@ -7,8 +7,13 @@ import './style/IntroWeb.css'; // CSS 파일을 import 합니다.
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
 import { Routes } from 'react-router-dom'; // Routes 추가
 import { Collection, GearFill, Speedometer, Table } from 'react-bootstrap-icons';
+import { useEffect } from 'react';
 
 function IntroWeb() {
+  useEffect(() => {
+    // 페이지가 마운트될 때 스크롤을 맨 위로 이동
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <header>
@@ -30,7 +35,6 @@ function IntroWeb() {
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                     <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
-                    <li><Link className="dropdown-item" to="">갤러리</Link></li>
                   </ul>
                 </li>
                 <li className="nav-item dropdown">

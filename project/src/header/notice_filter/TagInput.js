@@ -62,6 +62,7 @@ class TagInput extends Component {
     }
     
     handleTagDelete(index, e) {
+      e.preventDefault(); // 브라우저의 기본 동작 방지
       this.deleteTag(index, () => {
         this.props.onTagChange(this.state.tags);
       });

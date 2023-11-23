@@ -26,8 +26,6 @@ function Somoim() {
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                     <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
-                    <li><Link className="dropdown-item" to="/Student_Notice">학생회공지</Link></li>
-                    <li><Link className="dropdown-item" to="">갤러리</Link></li>
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
@@ -58,9 +56,7 @@ function Somoim() {
         </nav>
       </header>
 
-      <div className='sidebar'>
-        <Sidebar />
-      </div>
+
       <div className="board">
 
         <div className="main-contents">

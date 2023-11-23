@@ -29,7 +29,6 @@ function Professor() {
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                                         <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
-                                        <li><Link className="dropdown-item" to="">갤러리</Link></li>
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">
@@ -63,6 +62,19 @@ function Professor() {
             <div class="board">
                 <div class="main-pro">
                     <div class="between">
+
+                    <div class="component-con">
+                            <div class="dongimg">
+                                <img src="/Image/king.jpeg" alt="로고" class="logo-image" />
+                            </div>
+                            <div class="description">
+                                <p>박승현</p>
+                                <p>사무실 : 02-760-4120</p>
+                                <p>이메일 :</p>
+                                <p>sp AT hansung.ac.kr	</p>
+
+                            </div>
+                        </div>
                         <div class="component-con">
                             <div class="dongimg">
                                 <img src="Image/GyeHeewon.png" alt="로고" class="logo-image" />
@@ -344,11 +356,6 @@ function Professor() {
 
             <footer>
                 <div className="footer-container">
-                    <div className="footer-links">
-                        <a href="#">| 게시판보기 | </a>
-                        <a href="#">교수소개 사이트 | </a>
-                        <a href="#">한성대학교 커리큘럼 |</a>
-                    </div>
                     <div className="footer-info">
                         <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
                         <p>대표 02-760-4114 입학 02-760-5800</p>

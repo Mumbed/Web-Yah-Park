@@ -29,7 +29,6 @@ function Student_Notice() {
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                                         <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
-                                        <li><Link className="dropdown-item" to="">갤러리</Link></li>
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">
@@ -64,8 +63,10 @@ function Student_Notice() {
                 <div className="signin-form">
                     <input type="text" placeholder="학번" id="email" />
                     <input type="password" placeholder="비밀번호" id="password" />
-                    <input type="button" value="로그인" id="signin" />
-                </div>
+
+                    <Link to="/Main">
+                        <input type="button" value="로그인" id="signin" />
+                    </Link>                </div>
             </div>
 
             <footer>

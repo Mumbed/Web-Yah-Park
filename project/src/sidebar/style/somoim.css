@@ -21,7 +21,10 @@
     padding: 20px; /* 적절한 패딩을 제공 */
     overflow-y: auto; /* 필요한 경우 스크롤 허용 */
   }
-
+  .circle-logo {
+    width: 150px;
+    height: 150px;
+  }
 
 /* footer */
 footer {

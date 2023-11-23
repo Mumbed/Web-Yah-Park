@@ -2,36 +2,36 @@
     "somoims": [
       {
         "id": 1,
-        "name": "컴공 소모임1",
-        "image": "BUG_Img.jpg",
-        "description": "한성대학교 컴퓨터 공학부 소모임1 입니다.",
+        "name": "TEAM ODD",
+        "image": "ODD.png",
+        "description": "한성대학교 컴퓨터 공학부 소모임 TEAM ODD 입니다.",
         "link": "/Somoim_Content"
       },
       {
         "id": 2,
-        "name": "컴공 소모임2",
-        "image": "UMC.jpg",
-        "description": "한성대학교 컴퓨터 공학부 소모임2 입니다.",
+        "name": "DC&M",
+        "image": "DCM.jpeg",
+        "description": "한성대학교 컴퓨터 공학부 소모임 DC&M 입니다.",
         "link": "/Somoim_Content"
       },
       {
         "id": 3,
         "name": "멋쟁이 사자처럼",
-        "image": "Lion.png",
+        "image": "LION.png",
         "description": "대학 연합 동아리 멋쟁이 사자처럼 입니다.",
         "link": "/Somoim_Content"
       },
       {
         "id": 4,
         "name": "Discipline",
-        "image": "Lion.png",
+        "image": "DISCIPLINE.jpeg",
         "description": "Discipline 입니다.",
         "link": "/Somoim_Content"
       },
       {
         "id": 5,
         "name": "POCS",
-        "image": "Lion.png",
+        "image": "POCS.jpeg",
         "description": "POCS 입니다.",
         "link": "/Somoim_Content"
       },

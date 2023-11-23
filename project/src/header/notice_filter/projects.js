@@ -1,5 +1,4 @@
 const projects = [
-    // ... (프로젝트 데이터 배열)
     {
       title: '[투비소프트]전문가 양성과정 모집 안내',
       description: '안녕하세요. 컴퓨터공학부 행정조교입니다. \n 투비소프트 프로젝트형 넥사크로 전문가 양성과정 모집 안내드립니다.  상세 내용 확인은 아래 링크를 통해 확인이 가능합니다. 링크 : https://sites.google.com/view/tobeedu7th',
