@@ -1,9 +1,9 @@
 import React from 'react';
-import './style/somoim.css'; // 커스텀 스타일 시트를 import 합니다.
-import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS를 import 합니다.
+import './style/somoim.css'; 
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'; // Routes 추가
 import data from '../somoim.json'
-import Sidebar from '../Sidebar'; // Sidebar 컴포넌트를 올바른 경로로 불러옵니다.
+import Sidebar from '../Sidebar'; 
 function Somoim() {
   return (
     <div>
@@ -86,11 +86,6 @@ function Somoim() {
       <footer>
         <div className="footer-container">
 
-          <div className="footer-links">
-            <a href="#">| 게시판보기 |</a>
-            <a href="#">교수소개 사이트 |</a>
-            <a href="#">한성대학교 커리큘럼 |</a>
-          </div>
           <div className="footer-info">
             <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
             <p>대표 02-760-4114 입학 02-760-5800</p>

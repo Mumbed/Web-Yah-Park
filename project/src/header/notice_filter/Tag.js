@@ -1,5 +1,3 @@
-// src/Tag.js
-
 import React from 'react';
 
 const Tag = ({name, index, onDelete, hashtag, hashtagStyle}) => {

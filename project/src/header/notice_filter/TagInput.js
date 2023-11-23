@@ -44,7 +44,7 @@ class TagInput extends Component {
             }
             break;
           case ',':
-            e.preventDefault(); // 기본 동작 방지 (다음 입력 필드로 이동하는 동작 방지)
+            e.preventDefault(); 
             value = value.trim();
             if (value && this.notDuplicate(tags, value)) {
               this.addTag(value);
@@ -62,7 +62,7 @@ class TagInput extends Component {
     }
     
     handleTagDelete(index, e) {
-      e.preventDefault(); // 브라우저의 기본 동작 방지
+      e.preventDefault(); 
       this.deleteTag(index, () => {
         this.props.onTagChange(this.state.tags);
       });
@@ -92,7 +92,6 @@ class TagInput extends Component {
     updateControlledTags(tags) {
       if (tags && !Helpers.hasDuplicates(tags)) {
         this.setState({ tags }, () => {
-          // this.props.onTagChange(tags);
         });
       }
     }

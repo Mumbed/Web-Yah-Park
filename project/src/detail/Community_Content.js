@@ -1,7 +1,7 @@
 import React from 'react';
 import './style/Community_Content.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import data from '../data.json';
@@ -55,7 +55,6 @@ const Community_Content = () => {
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                     <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
-                    <li><Link className="dropdown-item" to="">갤러리</Link></li>
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
@@ -112,11 +111,7 @@ const Community_Content = () => {
 
       <footer>
         <div className="footer-container">
-          <div className="footer-links">
-            <a href="#">| 게시판보기 | </a>
-            <a href="#">교수소개 사이트 | </a>
-            <a href="#">한성대학교 커리큘럼 |</a>
-          </div>
+
           <div className="footer-info">
             <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
             <p>대표 02-760-4114 입학 02-760-5800</p>

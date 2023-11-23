@@ -1,4 +1,3 @@
-// src/Helpers.js
 
 class Helpers {
     static contains(orig, filter) {

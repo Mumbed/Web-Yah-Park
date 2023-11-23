@@ -1,5 +1,3 @@
-// src/TagsList.js
-
 import React from 'react';
 import Tag from './Tag';
 

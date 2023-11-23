@@ -1,4 +1,3 @@
-// src/ExampleList.js
 
 import React from 'react';
 import ExampleListItem from './ExampleListItem';

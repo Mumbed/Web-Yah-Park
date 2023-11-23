@@ -1,13 +1,13 @@
 import React, { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom'; // useNavigate를 import
-import { NoticeContext } from './NoticeContext'; // 경로를 확인해주세요.
+import { useNavigate } from 'react-router-dom'; 
+import { NoticeContext } from './NoticeContext'; 
 
-import './style/Write.css'; // Import your CSS file here
+import './style/Write.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
 
 function NoticeWrite() {
-  const navigate = useNavigate(); // useNavigate를 사용
+  const navigate = useNavigate(); 
   const { notices, setNotices } = useContext(NoticeContext);
   const [id, setId] = useState('101');
 
@@ -16,8 +16,7 @@ function NoticeWrite() {
   const [password, setPassword] = useState('');
   const [content, setContent] = useState('');
   const handleIdChange = (e) => setId(e.target.value);
-  const [category, setCategory] = useState('중요'); // 기본 카테고리 설정
-
+  const [category, setCategory] = useState('중요'); 
   const handleTitleChange = (e) => setTitle(e.target.value);
   const handleAuthorChange = (e) => setAuthor(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
@@ -36,19 +35,16 @@ function NoticeWrite() {
       date: new Date().toLocaleDateString(),
       views: 0,
       content,
-      category // 선택한 카테고리
+      category 
 
     };
 
 
-    // Add the new notice to the existing noticedata array
     setNotices([newNotice, ...notices]);
 
     navigate('/Notice');
 
 
-    // Optionally, redirect to the notice list page
-    // history.push('/notices');
   };
 
 
@@ -73,7 +69,6 @@ function NoticeWrite() {
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><Link className="dropdown-item" to="/Community">동아리</Link></li>
                     <li><Link className="dropdown-item" to="/Somoim">소모임</Link></li>
-                    <li><Link className="dropdown-item" to="">갤러리</Link></li>
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
@@ -194,11 +189,8 @@ function NoticeWrite() {
 
       <footer>
         <div className="footer-container">
-          <div className="footer-links">
-            <a href="#">|  게시판보기  | </a>
-            <a href="#">교수소개 사이트    | </a>
-            <a href="#">한성대학교 커리큘럼  |</a>
-          </div>
+        
+         
           <div className="footer-info">
             <p>02876 서울특별시 성북구 삼선교로 16길(삼선동2가) 116 한성대학교</p>
             <p>대표 02-760-4114 입학 02-760-5800</p>

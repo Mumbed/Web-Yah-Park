@@ -1,11 +1,11 @@
 import React from 'react';
-import './style/Professor.css'; // App.css 파일에 추가적인 스타일링을 적용할 수 있습니다.
+import './style/Professor.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // BrowserRouter 추가
-import { Routes } from 'react-router-dom'; // Routes 추가
+import { Routes } from 'react-router-dom'; 
 
 function Professor() {
     return (
